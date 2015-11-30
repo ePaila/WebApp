@@ -1,0 +1,5 @@
+D:\EpailaTech.com\WebSite\WebApp\ePaila.Model\bin\Debug\ePaila.Model.dll
+D:\EpailaTech.com\WebSite\WebApp\ePaila.Model\bin\Debug\ePaila.Model.pdb
+D:\EpailaTech.com\WebSite\WebApp\ePaila.Model\obj\Debug\ePaila.Model.csprojResolveAssemblyReference.cache
+D:\EpailaTech.com\WebSite\WebApp\ePaila.Model\obj\Debug\ePaila.Model.dll
+D:\EpailaTech.com\WebSite\WebApp\ePaila.Model\obj\Debug\ePaila.Model.pdb

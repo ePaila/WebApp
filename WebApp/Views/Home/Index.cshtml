@@ -1,0 +1,42 @@
+﻿@using ePaila.ViewModel;
+
+@model ArticleViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ePaila";
+}
+
+<!-- Post -->
+@foreach (var item in Model.Articles)
+{
+    <article class="box post post-excerpt">
+        <header>
+            <h2><a href="@Url.Action("Details", "Home",new { articleid= item.ArticleID})" >@item.Title</a></h2>
+        </header>
+        <div class="info">
+            <span class="date"><span class="month">@item.PostedDate.ToString("MMM")<span>y</span></span> <span class="day">@item.PostedDate.ToString("dd")</span><span class="year">, @item.PostedDate.ToString("yyyy")</span></span>
+            <ul class="stats">
+                <li><a href="#" class="icon fa-comment">0</a></li>
+                <li><a href="#" class="icon fa-heart">0</a></li>
+                <li><a href="#" class="icon fa-twitter">0</a></li>
+                <li><a href="#" class="icon fa-facebook">0</a></li>
+            </ul>
+        </div>
+        @Html.Raw(item.Body)
+    </article>
+}
+<!-- Pagination -->
+@*<div class="pagination">
+    <a href="#" class="button previous">Previous Page</a>
+    <div class="pages">
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <span>&hellip;</span>
+        <a href="#">20</a>
+    </div>
+    <a href="#" class="button next">Next Page</a>
+</div>*@
+
+

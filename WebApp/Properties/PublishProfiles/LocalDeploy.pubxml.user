@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\EpailaTech.com\WebSite\Deployment</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Areas/CMS/Views/web.config">
+      <publishTime>10/13/2015 16:51:15</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>10/13/2015 17:14:46</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>10/14/2015 00:48:52</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>10/14/2015 00:48:52</publishTime>
+    </File>
+    <File Include="bin/ePaila.Data.dll">
+      <publishTime>11/29/2015 17:30:06</publishTime>
+    </File>
+    <File Include="bin/ePaila.ViewModel.dll">
+      <publishTime>11/24/2015 21:06:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>10/13/2015 16:51:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>10/13/2015 17:00:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>10/13/2015 16:50:59</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>10/13/2015 17:15:36</publishTime>
+    </File>
+    <File Include="bin/Ninject.dll">
+      <publishTime>10/15/2015 22:58:10</publishTime>
+    </File>
+    <File Include="bin/Ninject.Web.Common.dll">
+      <publishTime>10/15/2015 22:58:12</publishTime>
+    </File>
+    <File Include="bin/Ninject.Web.Mvc.dll">
+      <publishTime>10/15/2015 22:58:15</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>10/13/2015 17:00:28</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>10/13/2015 16:50:59</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>10/13/2015 16:51:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>10/13/2015 16:51:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>10/13/2015 16:51:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>10/13/2015 16:51:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>10/13/2015 16:51:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>10/13/2015 16:51:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>10/13/2015 16:51:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>10/13/2015 16:51:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>10/13/2015 16:51:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>10/13/2015 16:51:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>10/13/2015 16:51:00</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>10/13/2015 16:50:59</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>10/13/2015 16:50:59</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>10/13/2015 17:15:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>10/13/2015 16:50:59</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>10/13/2015 16:50:59</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>10/13/2015 16:50:59</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>10/13/2015 16:50:59</publishTime>
+    </File>
+    <File Include="bin/WebActivatorEx.dll">
+      <publishTime>10/15/2015 22:58:13</publishTime>
+    </File>
+    <File Include="bin/WebApp.dll">
+      <publishTime>11/29/2015 19:45:09</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>10/13/2015 17:15:43</publishTime>
+    </File>
+    <File Include="Content/css/font-awesome.min.css">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Content/css/ie8.css">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Content/css/images/bg01.png">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Content/css/images/bg02.png">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Content/css/main.css">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Content/fonts/fontawesome-webfont.eot">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Content/fonts/fontawesome-webfont.svg">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Content/fonts/fontawesome-webfont.ttf">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Content/fonts/fontawesome-webfont.woff">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Content/fonts/fontawesome-webfont.woff2">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Content/fonts/FontAwesome.otf">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Content/images/gldngate.jpg">
+      <publishTime>10/13/2015 22:51:08</publishTime>
+    </File>
+    <File Include="Content/images/goldengatebridge.jpg">
+      <publishTime>10/13/2015 22:51:08</publishTime>
+    </File>
+    <File Include="Content/images/pic01.jpg">
+      <publishTime>10/13/2015 22:51:08</publishTime>
+    </File>
+    <File Include="Content/images/pic02.jpg">
+      <publishTime>10/13/2015 22:51:08</publishTime>
+    </File>
+    <File Include="Content/images/plants.jpg">
+      <publishTime>10/13/2015 22:51:08</publishTime>
+    </File>
+    <File Include="Content/js/ie/html5shiv.js">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Content/js/ie/PIE.htc">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Content/js/ie/respond.min.js">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Content/js/jquery.min.js">
+      <publishTime>10/13/2015 17:28:30</publishTime>
+    </File>
+    <File Include="Content/js/main.js">
+      <publishTime>10/13/2015 17:28:30</publishTime>
+    </File>
+    <File Include="Content/js/skel.min.js">
+      <publishTime>10/13/2015 17:28:30</publishTime>
+    </File>
+    <File Include="Content/js/util.js">
+      <publishTime>10/13/2015 17:28:30</publishTime>
+    </File>
+    <File Include="Content/sass/ie8.scss">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Content/sass/libs/_functions.scss">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Content/sass/libs/_mixins.scss">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Content/sass/libs/_skel.scss">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Content/sass/libs/_vars.scss">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Content/sass/main.scss">
+      <publishTime>10/13/2015 17:28:29</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>10/13/2015 16:50:58</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/15/2015 23:17:27</publishTime>
+    </File>
+    <File Include="Views/AboutMe/Index.cshtml">
+      <publishTime>11/29/2015 15:31:57</publishTime>
+    </File>
+    <File Include="Views/ContactMe/Index.cshtml">
+      <publishTime>11/25/2015 13:06:32</publishTime>
+    </File>
+    <File Include="Views/Home/Details.cshtml">
+      <publishTime>11/05/2015 22:51:14</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>11/29/2015 17:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/_Calendar.cshtml">
+      <publishTime>10/18/2015 23:21:06</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>11/29/2015 17:07:06</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>10/15/2015 23:18:29</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>10/13/2015 16:54:59</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/29/2015 17:50:14</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

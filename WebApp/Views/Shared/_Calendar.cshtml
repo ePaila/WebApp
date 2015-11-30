@@ -1,0 +1,381 @@
+﻿@using ePaila.ViewModel
+
+@model ePaila.ViewModel.TCalendar
+<table>
+    <caption>@Model.Title</caption>
+    <thead>
+        <tr>
+            <th scope="col" title="Sunday">S</th>
+            <th scope="col" title="Monday">M</th>
+            <th scope="col" title="Tuesday">T</th>
+            <th scope="col" title="Wednesday">W</th>
+            <th scope="col" title="Thursday">T</th>
+            <th scope="col" title="Friday">F</th>
+            <th scope="col" title="Saturday">S</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @*<td colspan="4" class="pad"><span>&nbsp;</span></td>*@
+            <td class="@Model.Week1.Sunday.Today">
+                @if (Model.Week1.Sunday.Href.Length > 0)
+                {
+                    <a href="@Model.Week1.Sunday.Href">@Model.Week1.Sunday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week1.Sunday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week1.Monday.Today">
+                @if (Model.Week1.Monday.Href.Length > 0)
+                {
+                    <a href="@Model.Week1.Monday.Href">@Model.Week1.Monday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week1.Monday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week1.Tuesday.Today">
+                @if (Model.Week1.Tuesday.Href.Length > 0)
+                {
+                    <a href="@Model.Week1.Tuesday.Href">@Model.Week1.Tuesday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week1.Tuesday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week1.Wednesday.Today">
+                @if (Model.Week1.Wednesday.Href.Length > 0)
+                {
+                    <a href="@Model.Week1.Wednesday.Href">@Model.Week1.Wednesday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week1.Wednesday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week1.Thursday.Today">
+                @if (Model.Week1.Thursday.Href.Length > 0)
+                {
+                    <a href="@Model.Week1.Thursday.Href">@Model.Week1.Thursday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week1.Thursday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week1.Friday.Today">
+                @if (Model.Week1.Friday.Href.Length > 0)
+                {
+                    <a href="@Model.Week1.Friday.Href">@Model.Week1.Friday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week1.Friday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week1.Saturday.Today">
+                @if (Model.Week1.Saturday.Href.Length > 0)
+                {
+                    <a href="@Model.Week1.Saturday.Href">@Model.Week1.Saturday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week1.Saturday.DayText</span>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td class="@Model.Week2.Sunday.Today">
+                @if (Model.Week2.Sunday.Href.Length > 0)
+                {
+                    <a href="@Model.Week2.Sunday.Href">@Model.Week2.Sunday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week2.Sunday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week2.Monday.Today">
+                @if (Model.Week2.Monday.Href.Length > 0)
+                {
+                    <a href="@Model.Week2.Monday.Href">@Model.Week2.Monday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week2.Monday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week2.Tuesday.Today">
+                @if (Model.Week2.Tuesday.Href.Length > 0)
+                {
+                    <a href="@Model.Week2.Tuesday.Href">@Model.Week2.Tuesday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week2.Tuesday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week2.Wednesday.Today">
+                @if (Model.Week2.Wednesday.Href.Length > 0)
+                {
+                    <a href="@Model.Week2.Wednesday.Href">@Model.Week2.Wednesday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week2.Wednesday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week2.Thursday.Today">
+                @if (Model.Week2.Thursday.Href.Length > 0)
+                {
+                    <a href="@Model.Week2.Thursday.Href">@Model.Week2.Thursday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week2.Thursday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week2.Friday.Today">
+                @if (Model.Week2.Friday.Href.Length > 0)
+                {
+                    <a href="@Model.Week2.Friday.Href">@Model.Week2.Friday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week2.Friday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week2.Saturday.Today">
+                @if (Model.Week2.Saturday.Href.Length > 0)
+                {
+                    <a href="@Model.Week2.Saturday.Href">@Model.Week2.Saturday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week2.Saturday.DayText</span>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td class="@Model.Week3.Sunday.Today">
+                @if (Model.Week3.Sunday.Href.Length > 0)
+                {
+                    <a href="@Model.Week3.Sunday.Href">@Model.Week3.Sunday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week3.Sunday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week3.Monday.Today">
+                @if (Model.Week3.Monday.Href.Length > 0)
+                {
+                    <a href="@Model.Week3.Monday.Href">@Model.Week3.Monday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week3.Monday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week3.Tuesday.Today">
+                @if (Model.Week3.Tuesday.Href.Length > 0)
+                {
+                    <a href="@Model.Week3.Tuesday.Href">@Model.Week3.Tuesday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week3.Tuesday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week3.Wednesday.Today">
+                @if (Model.Week3.Wednesday.Href.Length > 0)
+                {
+                    <a href="@Model.Week3.Wednesday.Href">@Model.Week3.Wednesday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week3.Wednesday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week3.Thursday.Today">
+                @if (Model.Week3.Thursday.Href.Length > 0)
+                {
+                    <a href="@Model.Week3.Thursday.Href">@Model.Week3.Thursday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week3.Thursday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week3.Friday.Today">
+                @if (Model.Week3.Friday.Href.Length > 0)
+                {
+                    <a href="@Model.Week3.Friday.Href">@Model.Week3.Friday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week3.Friday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week3.Saturday.Today">
+                @if (Model.Week3.Saturday.Href.Length > 0)
+                {
+                    <a href="@Model.Week3.Saturday.Href">@Model.Week3.Saturday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week3.Saturday.DayText</span>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td class="@Model.Week4.Sunday.Today">
+                @if (Model.Week4.Sunday.Href.Length > 0)
+                {
+                    <a href="@Model.Week4.Sunday.Href">@Model.Week4.Sunday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week4.Sunday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week4.Monday.Today">
+                @if (Model.Week4.Monday.Href.Length > 0)
+                {
+                    <a href="@Model.Week4.Monday.Href">@Model.Week4.Monday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week4.Monday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week4.Tuesday.Today">
+                @if (Model.Week4.Tuesday.Href.Length > 0)
+                {
+                    <a href="@Model.Week4.Tuesday.Href">@Model.Week4.Tuesday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week4.Tuesday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week4.Wednesday.Today">
+                @if (Model.Week4.Wednesday.Href.Length > 0)
+                {
+                    <a href="@Model.Week4.Wednesday.Href">@Model.Week4.Wednesday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week4.Wednesday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week4.Thursday.Today">
+                @if (Model.Week4.Thursday.Href.Length > 0)
+                {
+                    <a href="@Model.Week4.Thursday.Href">@Model.Week4.Thursday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week4.Thursday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week4.Friday.Today">
+                @if (Model.Week4.Friday.Href.Length > 0)
+                {
+                    <a href="@Model.Week4.Friday.Href">@Model.Week4.Friday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week4.Friday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week4.Saturday.Today">
+                @if (Model.Week4.Saturday.Href.Length > 0)
+                {
+                    <a href="@Model.Week4.Saturday.Href">@Model.Week4.Saturday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week4.Saturday.DayText</span>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td class="@Model.Week5.Sunday.Today">
+                @if (Model.Week5.Sunday.Href.Length > 0)
+                {
+                    <a href="@Model.Week5.Sunday.Href">@Model.Week5.Sunday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week5.Sunday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week5.Monday.Today">
+                @if (Model.Week5.Monday.Href.Length > 0)
+                {
+                    <a href="@Model.Week5.Monday.Href">@Model.Week5.Monday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week5.Monday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week5.Tuesday.Today">
+                @if (Model.Week5.Tuesday.Href.Length > 0)
+                {
+                    <a href="@Model.Week5.Tuesday.Href">@Model.Week5.Tuesday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week5.Tuesday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week5.Wednesday.Today">
+                @if (Model.Week5.Wednesday.Href.Length > 0)
+                {
+                    <a href="@Model.Week5.Wednesday.Href">@Model.Week5.Wednesday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week5.Wednesday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week5.Thursday.Today">
+                @if (Model.Week5.Thursday.Href.Length > 0)
+                {
+                    <a href="@Model.Week5.Thursday.Href">@Model.Week5.Thursday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week5.Thursday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week5.Friday.Today">
+                @if (Model.Week5.Friday.Href.Length > 0)
+                {
+                    <a href="@Model.Week5.Friday.Href">@Model.Week5.Friday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week5.Friday.DayText</span>
+                }
+            </td>
+            <td class="@Model.Week5.Saturday.Today">
+                @if (Model.Week5.Saturday.Href.Length > 0)
+                {
+                    <a href="@Model.Week5.Saturday.Href">@Model.Week5.Saturday.DayText</a>
+                }
+                else
+                {
+                    <span>@Model.Week5.Saturday.DayText</span>
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>
+

@@ -1,0 +1,107 @@
+﻿@using ePaila.ViewModel;
+
+@model LeftPanelViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/css/main.css")" rel="stylesheet" type="text/css" />
+
+    <script src="@Url.Content("~/Content/js/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/skel.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/util.js")"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="@Url.Content("~/Content/js/main.js")"></script>
+</head>
+<body>
+    <div>
+        <!-- Content -->
+        <div id="content">
+            <div class="inner">
+
+                @RenderBody()
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+
+            <!-- Logo -->
+            <h1 id="logo"><a href="@Url.Action("Index", "Home")">ePaila</a></h1>
+
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li class="current"><a href="@Url.Action("Index", "Home")">Latest Post</a></li>
+                    <li><a href="@Url.Action("Index", "Archives")">Archives</a></li>
+                    <li><a href="@Url.Action("Index", "AboutMe")">About Me</a></li>
+                    <li><a href="@Url.Action("Index", "ContactMe")">Contact Me</a></li>
+                </ul>
+            </nav>
+
+            <!-- Search -->
+            <section class="box search">
+                <form method="post" action="#">
+                    <input type="text" class="text" name="search" placeholder="Search" />
+                </form>
+            </section>
+
+            <!-- Text -->
+            <section class="box text-style1">
+                <div class="inner">
+                    <p>
+                        <a href="#">What I learn From Nature</a> |
+                        <a href="#">Blue Moon </a> |
+                        <a href="#">Educate Child</a> |
+                        <a href="#">App Architect </a>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Recent Posts -->
+            <section class="box recent-posts">
+                <header>
+                    <h2>Recent Posts</h2>
+                </header>
+                <ul>
+                    <li><a href="#">Lorem ipsum dolor</a></li>
+                    <li><a href="#">Feugiat nisl aliquam</a></li>
+                    <li><a href="#">Sed dolore magna</a></li>
+                    <li><a href="#">Malesuada commodo</a></li>
+                    <li><a href="#">Ipsum metus nullam</a></li>
+                </ul>
+            </section>
+
+            <!-- Recent Comments -->
+            <section class="box recent-comments">
+                <header>
+                    <h2>Recent Comments</h2>
+                </header>
+                <ul>
+                    <li>case on <a href="#">Lorem ipsum dolor</a></li>
+                    <li>molly on <a href="#">Sed dolore magna</a></li>
+                    <li>case on <a href="#">Sed dolore magna</a></li>
+                </ul>
+            </section>
+
+            <!-- Calendar -->
+            <section class="box calendar">
+                <div class="inner">
+                    @{Html.RenderPartial("_Calendar", Model.Calendar);}
+                </div>
+            </section>
+
+            <!-- Copyright -->
+            <ul id="copyright">
+                <li>&copy; ePaila</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+
+        </div>
+    </div>
+</body>
+</html>
