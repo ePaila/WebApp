@@ -7,7 +7,7 @@
 
 <h2>Total Articles: @Model.Articles.Count</h2>
 <!-- Post -->
-@foreach (var item in Model.Articles)
+@foreach (var item in Model.Articles.Where(x=> x.IsVisible))
 {
     <article class="box post post-excerpt">
         <header>

@@ -6,10 +6,11 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    
     <title>@ViewBag.Title</title>
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/images/Favicon.png")"/>
     <link href="@Url.Content("~/Content/css/main.css")" rel="stylesheet" type="text/css" />
 
-    <script src="@Url.Content("~/Content/js/jquery.min.js")"></script>
     <script src="@Url.Content("~/Content/js/jquery.min.js")"></script>
     <script src="@Url.Content("~/Content/js/skel.min.js")"></script>
     <script src="@Url.Content("~/Content/js/util.js")"></script>
@@ -70,7 +71,7 @@
                 <ul>                    
                     @foreach (var item in Model.RecentPosts)
                     {
-                        <li><a href="@Url.Action("Details", "Home",new { articleid= item.ArticleID})">@item.Title.Substring(0,26)...</a></li>
+                        <li><a href="@Url.Action("Details", "Home",new { articleid= item.ArticleID})">@(item.Title.Length>26? item.Title.Substring(0,26): item.Title)...</a></li>
                     }
                 </ul>
             </section>

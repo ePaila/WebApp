@@ -29,6 +29,7 @@ namespace ePaila.Data.Repo
             {
                 results = _db.Articles
                  .Where(x => !x.IsDeleted)
+                 .OrderByDescending(z => z.PostedDate)
                  .Select(y => new ViewModel.Article()
                  {
                      ArticleID = y.ID,
@@ -36,8 +37,7 @@ namespace ePaila.Data.Repo
                      Body = y.Body,
                      PostedDate = y.PostedDate.Value,
                      IsVisible = y.IsVisible
-                 })
-                 .OrderByDescending(z => z.PostedDate)
+                 })                 
              .ToList<ViewModel.Article>();
             }
             catch (Exception ex)

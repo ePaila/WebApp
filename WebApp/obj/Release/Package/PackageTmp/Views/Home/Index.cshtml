@@ -7,7 +7,7 @@
 }
 
 <!-- Post -->
-@foreach (var item in Model.Articles)
+@foreach (var item in Model.Articles.Where(x=> x.IsVisible))
 {
     <article class="box post post-excerpt">
         <header>

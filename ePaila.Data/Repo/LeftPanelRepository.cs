@@ -46,7 +46,7 @@ namespace ePaila.Data.Repo
             try
             {
                 recentPosts = _db.Articles
-                 .Where(x => !x.IsDeleted)
+                 .Where(x => x.IsVisible)
                  .OrderByDescending(z => z.PostedDate)
                  .Skip(5)
                  .Take(5)
@@ -74,7 +74,7 @@ namespace ePaila.Data.Repo
         {
             DateTime dt = new DateTime(DateTime.Now.Year, currentMonth.Month, 1);
             List<DateTime> postedDays = new List<DateTime>();
-            postedDays = _db.Articles.Where(x => x.PostedDate >= dt).Select(y => y.PostedDate.Value).ToList();
+            postedDays = _db.Articles.Where(x => x.IsVisible && x.PostedDate >= dt).Select(y => y.PostedDate.Value).ToList();
 
             List<int> days = new List<int>();
             if (postedDays.Count > 0)
