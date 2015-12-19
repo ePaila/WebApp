@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ePaila.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,18 @@ namespace WebApp.Controllers
 {
     public class AboutMeController : BaseController
     {
+        //ArticleRepository _articleRepo;
+
+        public AboutMeController(ePaila.Data.ePailaEntities db) : base(db)
+        {
+           // _articleRepo = new ArticleRepository(db);
+        }
+
         // GET: AboutMe
         public ActionResult Index()
         {
-            return View();
+            AboutMeViewModel model = new AboutMeViewModel();
+            return View(model);
         }
     }
 }

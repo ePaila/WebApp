@@ -10,3 +10,15 @@ D:\EpailaTech.com\WebSite\WebApp\ePaila.Data\bin\Release\EntityFramework.SqlServ
 D:\EpailaTech.com\WebSite\WebApp\ePaila.Data\obj\Release\ePaila.Data.csprojResolveAssemblyReference.cache
 D:\EpailaTech.com\WebSite\WebApp\ePaila.Data\obj\Release\ePaila.Data.dll
 D:\EpailaTech.com\WebSite\WebApp\ePaila.Data\obj\Release\ePaila.Data.pdb
+D:\EpailaTech.com\Repo\WebApp\ePaila.Data\bin\Release\ePaila.Data.dll.config
+D:\EpailaTech.com\Repo\WebApp\ePaila.Data\bin\Release\ePaila.Data.dll
+D:\EpailaTech.com\Repo\WebApp\ePaila.Data\bin\Release\ePaila.Data.pdb
+D:\EpailaTech.com\Repo\WebApp\ePaila.Data\bin\Release\EntityFramework.dll
+D:\EpailaTech.com\Repo\WebApp\ePaila.Data\bin\Release\EntityFramework.SqlServer.dll
+D:\EpailaTech.com\Repo\WebApp\ePaila.Data\bin\Release\ePaila.ViewModel.dll
+D:\EpailaTech.com\Repo\WebApp\ePaila.Data\bin\Release\ePaila.ViewModel.pdb
+D:\EpailaTech.com\Repo\WebApp\ePaila.Data\bin\Release\EntityFramework.xml
+D:\EpailaTech.com\Repo\WebApp\ePaila.Data\bin\Release\EntityFramework.SqlServer.xml
+D:\EpailaTech.com\Repo\WebApp\ePaila.Data\obj\Release\ePaila.Data.csprojResolveAssemblyReference.cache
+D:\EpailaTech.com\Repo\WebApp\ePaila.Data\obj\Release\ePaila.Data.dll
+D:\EpailaTech.com\Repo\WebApp\ePaila.Data\obj\Release\ePaila.Data.pdb

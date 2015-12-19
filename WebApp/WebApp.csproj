@@ -159,6 +159,7 @@
     <Content Include="Content\js\skel.min.js" />
     <Content Include="Content\js\util.js" />
     <Content Include="Global.asax" />
+    <Content Include="Views\Shared\Error.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -168,6 +169,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\CMS\CMSAreaRegistration.cs" />
     <Compile Include="Controllers\AboutMeController.cs" />
+    <Compile Include="Controllers\ArchivesController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ContactMeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -201,6 +203,7 @@
     <Content Include="Content\sass\main.scss" />
     <None Include="Properties\PublishProfiles\ePailaProd.pubxml" />
     <None Include="Properties\PublishProfiles\LocalDeploy.pubxml" />
+    <Content Include="Views\Archives\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -226,6 +229,9 @@
       <Project>{dcd4b002-5c8e-490a-8e14-678257112142}</Project>
       <Name>ePaila.ViewModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

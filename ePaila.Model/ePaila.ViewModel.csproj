@@ -40,11 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutMeViewModel.cs" />
+    <Compile Include="ArchivesViewModel.cs" />
     <Compile Include="Article.cs" />
     <Compile Include="ArticleDetailViewModel.cs" />
     <Compile Include="ArticleViewModel.cs" />
     <Compile Include="Calendar.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="ContactMeViewModel.cs" />
     <Compile Include="LeftPanelViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

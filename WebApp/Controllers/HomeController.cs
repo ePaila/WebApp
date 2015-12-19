@@ -24,11 +24,15 @@ namespace WebApp.Controllers
         {
             ArticleViewModel model = new ArticleViewModel();
             if (day == 0)
+            {
                 model.Articles = _articleRepo.Get();
+                ViewBag.Title = "ePaila : Home";
+            }
             else
             {
                 DateTime dt = new DateTime(DateTime.Now.Year, DateTime.Now.Month, day);
                 model.Articles = _articleRepo.Get(dt);
+                ViewBag.Title = string.Format("ePaila : {0} {1}", DateTime.Now.ToString("MMM"), day);
             }
             return View(model);
         }

@@ -40,9 +40,29 @@ namespace ePaila.Data.Repo
             return "";
         }
 
-        public string RecentPosts()
+        public List<ViewModel.Article> RecentPosts()
         {
-            return "";
+            List<ViewModel.Article> recentPosts = new List<ViewModel.Article>();
+            try
+            {
+                recentPosts = _db.Articles
+                 .Where(x => !x.IsDeleted)
+                 .OrderByDescending(z => z.PostedDate)
+                 .Skip(5)
+                 .Take(5)
+                 .Select(y => new ViewModel.Article()
+                 {
+                     ArticleID = y.ID,
+                     Title = y.Title,
+                 })                 
+             .ToList<ViewModel.Article>();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            return recentPosts;
         }
 
         public string RecentComments()
@@ -55,10 +75,10 @@ namespace ePaila.Data.Repo
             DateTime dt = new DateTime(DateTime.Now.Year, currentMonth.Month, 1);
             List<DateTime> postedDays = new List<DateTime>();
             postedDays = _db.Articles.Where(x => x.PostedDate >= dt).Select(y => y.PostedDate.Value).ToList();
-            
+
             List<int> days = new List<int>();
-            if(postedDays.Count>0)
-                days= postedDays.Select(n => n.Day).ToList();
+            if (postedDays.Count > 0)
+                days = postedDays.Select(n => n.Day).ToList();
             return days;
         }
     }

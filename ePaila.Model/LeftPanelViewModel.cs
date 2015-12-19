@@ -10,7 +10,7 @@ namespace ePaila.ViewModel
     {
         public string HashTag { get; set; }
         public string RecentComments { get; set; }
-        public string RecentPosts { get; set; }
+        public List<ViewModel.Article> RecentPosts { get; set; }
         public TCalendar Calendar { get; set; }
     }
 }

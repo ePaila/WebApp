@@ -36,10 +36,10 @@
             <!-- Nav -->
             <nav id="nav">
                 <ul>
-                    <li class="current"><a href="@Url.Action("Index", "Home")">Latest Post</a></li>
-                    <li><a href="@Url.Action("Index", "Archives")">Archives</a></li>
-                    <li><a href="@Url.Action("Index", "AboutMe")">About Me</a></li>
-                    <li><a href="@Url.Action("Index", "ContactMe")">Contact Me</a></li>
+                    <li class="@(ViewBag.Title=="ePaila : Home"? "current":"")"><a href="@Url.Action("Index", "Home")">Latest Post</a></li>
+                    <li class="@(ViewBag.Title=="ePaila : Archives"? "current":"")"><a href="@Url.Action("Index", "Archives")">Archives</a></li>
+                    <li class="@(ViewBag.Title=="ePaila : AboutMe"? "current":"")"><a href="@Url.Action("Index", "AboutMe")">About Me</a></li>
+                    <li class="@(ViewBag.Title=="ePaila : ContactMe"? "current":"")"><a href="@Url.Action("Index", "ContactMe")">Contact Me</a></li>
                 </ul>
             </nav>
 
@@ -67,12 +67,11 @@
                 <header>
                     <h2>Recent Posts</h2>
                 </header>
-                <ul>
-                    <li><a href="#">Lorem ipsum dolor</a></li>
-                    <li><a href="#">Feugiat nisl aliquam</a></li>
-                    <li><a href="#">Sed dolore magna</a></li>
-                    <li><a href="#">Malesuada commodo</a></li>
-                    <li><a href="#">Ipsum metus nullam</a></li>
+                <ul>                    
+                    @foreach (var item in Model.RecentPosts)
+                    {
+                        <li><a href="@Url.Action("Details", "Home",new { articleid= item.ArticleID})">@item.Title.Substring(0,26)...</a></li>
+                    }
                 </ul>
             </section>
 

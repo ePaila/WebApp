@@ -18,6 +18,7 @@ namespace WebApp.Controllers
             var model = filterContext.Controller.ViewData.Model as LeftPanelViewModel;
             List<int> articlesDays = getArticlesDaysOfMonth(DateTime.Now);
             model.Calendar = loadCalendar(articlesDays);
+            model.RecentPosts = _leftPanelRepo.RecentPosts();
         }
 
         public BaseController()
@@ -29,6 +30,9 @@ namespace WebApp.Controllers
         {
             _leftPanelRepo = new LeftPanelRepository(db);
         }
+
+        //bind recent posts
+
         
         //load calendar
         TCalendar loadCalendar(List<int> articlesDays)
