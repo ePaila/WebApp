@@ -173,6 +173,7 @@
     <Compile Include="Controllers\ArchivesController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ContactMeController.cs" />
+    <Compile Include="Controllers\eTVController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -205,6 +206,7 @@
     <None Include="Properties\PublishProfiles\ePailaProd.pubxml" />
     <None Include="Properties\PublishProfiles\LocalDeploy.pubxml" />
     <Content Include="Views\Archives\Index.cshtml" />
+    <Content Include="Views\eTV\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -219,7 +221,6 @@
     <Folder Include="Areas\CMS\Models\" />
     <Folder Include="Areas\CMS\Views\Shared\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ePaila.Data\ePaila.Data.csproj">
