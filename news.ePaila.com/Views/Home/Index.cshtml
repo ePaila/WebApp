@@ -1,0 +1,22 @@
+﻿
+@model ePaila.ViewModel.FeedMeViewModel
+@{
+    ViewBag.Title = "ePaila : News Feed(Beta version)";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="@Url.Content("~/Content/js/xdomain.js")"></script>
+
+@foreach (var item in Model.Items)
+{
+    <article class="box post post-excerpt">
+        <header>
+            <h2><a href="@item.Link" target="_blank">@item.HeadLine</a></h2>
+        </header>
+        <span class="date">
+            <span><a href="@item.URL" target="_blank">@item.Title</a> -</span>
+            <span>@ePaila.Utility.eDateTime.ToRelativeTime(item.PublishedDate)</span>            
+        </span>
+        <p>@Html.Raw(item.Description)</p>
+        <hr>
+    </article>
+}

@@ -46,9 +46,10 @@
     <Compile Include="ArticleDetailViewModel.cs" />
     <Compile Include="ArticleViewModel.cs" />
     <Compile Include="Calendar.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="ContactMeViewModel.cs" />
-    <Compile Include="eTVViewModel.cs" />
+    <Compile Include="FeedChannel.cs" />
+    <Compile Include="FeedItem.cs" />
+    <Compile Include="FeedMeViewModel.cs" />
     <Compile Include="LeftPanelViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

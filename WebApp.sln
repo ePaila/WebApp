@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{B8E85760-CC4D-4510-93A9-B87F28326468}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ePaila.Data", "ePaila.Data\ePaila.Data.csproj", "{C3FBC922-3D84-4B1F-85D2-AAC1F80C997C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ePaila.ViewModel", "ePaila.Model\ePaila.ViewModel.csproj", "{DCD4B002-5C8E-490A-8E14-678257112142}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "news.ePaila.com", "news.ePaila.com\news.ePaila.com.csproj", "{96CA77F7-0039-467F-AA2D-CCD1E5171596}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ePaila.com", "ePaila.com\ePaila.com.csproj", "{B8E85760-CC4D-4510-93A9-B87F28326468}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ePaila.Utility", "ePaila.Utility\ePaila.Utility.csproj", "{DED8DE25-AEDC-4BC0-AAEF-6D1E23F0E05A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B8E85760-CC4D-4510-93A9-B87F28326468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8E85760-CC4D-4510-93A9-B87F28326468}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8E85760-CC4D-4510-93A9-B87F28326468}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8E85760-CC4D-4510-93A9-B87F28326468}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C3FBC922-3D84-4B1F-85D2-AAC1F80C997C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C3FBC922-3D84-4B1F-85D2-AAC1F80C997C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3FBC922-3D84-4B1F-85D2-AAC1F80C997C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +27,18 @@ Global
 		{DCD4B002-5C8E-490A-8E14-678257112142}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCD4B002-5C8E-490A-8E14-678257112142}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCD4B002-5C8E-490A-8E14-678257112142}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96CA77F7-0039-467F-AA2D-CCD1E5171596}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96CA77F7-0039-467F-AA2D-CCD1E5171596}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96CA77F7-0039-467F-AA2D-CCD1E5171596}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96CA77F7-0039-467F-AA2D-CCD1E5171596}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8E85760-CC4D-4510-93A9-B87F28326468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8E85760-CC4D-4510-93A9-B87F28326468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8E85760-CC4D-4510-93A9-B87F28326468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8E85760-CC4D-4510-93A9-B87F28326468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DED8DE25-AEDC-4BC0-AAEF-6D1E23F0E05A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DED8DE25-AEDC-4BC0-AAEF-6D1E23F0E05A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DED8DE25-AEDC-4BC0-AAEF-6D1E23F0E05A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DED8DE25-AEDC-4BC0-AAEF-6D1E23F0E05A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
