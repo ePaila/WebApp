@@ -32,19 +32,7 @@
             <h1 id="logo"><a href="@Url.Action("Index", "Home")">ePaila</a></h1>
             <label id="alert" style="font-size:small;">Updated every 30 sec</label><br />
             <label id="alert" style="font-size:small;">@Model.Items.Where(x => x.PublishedDate >= DateTime.Now.AddMinutes(-59)).Count() news last hour</label>
-            <!-- Nav -->
-            <section class="box recent-posts">
-                <header>
-                    <h2>News Channel</h2>
-                </header>
-                <ul>
-                    @foreach (var item in Model.Channels)
-                    {
-                        <li><a href="@item.URL" target="_blank">@item.Title</a></li>
-                    }
-                </ul>
-            </section>
-
+            
             <!-- Search -->
             <section class="box search">
                 <form method="post" action="#">

@@ -42,7 +42,7 @@
                                 <span>@item.Title -</span>
                                 <span>@ePaila.Utility.eDateTime.ToRelativeTime(item.PublishedDate)</span>
                             </span>
-                            <p>@Html.Raw(item.Description)</p>
+                            <p>@Html.Raw(item.Description.Length > 185 ? item.Description.Substring(0, 185) : item.Description) ...</p>
                         </a>
                     </div>
                     <div class="tc_back"></div>

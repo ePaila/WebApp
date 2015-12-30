@@ -149,6 +149,7 @@
     <Content Include="Content\images\Favicon.png" />
     <Content Include="Content\images\gldngate.jpg" />
     <Content Include="Content\images\goldengatebridge.jpg" />
+    <Content Include="Content\images\news.jpg" />
     <Content Include="Content\images\pic01.jpg" />
     <Content Include="Content\images\pic02.jpg" />
     <Content Include="Content\images\plants.jpg" />
