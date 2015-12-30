@@ -43,6 +43,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -110,6 +111,10 @@
     <ProjectReference Include="..\ePaila.Model\ePaila.ViewModel.csproj">
       <Project>{dcd4b002-5c8e-490a-8e14-678257112142}</Project>
       <Name>ePaila.ViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ePaila.Utility\ePaila.Utility.csproj">
+      <Project>{ded8de25-aedc-4bc0-aaef-6d1e23f0e05a}</Project>
+      <Name>ePaila.Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

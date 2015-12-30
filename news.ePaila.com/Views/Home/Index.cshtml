@@ -1,22 +1,53 @@
 ﻿
 @model ePaila.ViewModel.FeedMeViewModel
 @{
-    ViewBag.Title = "ePaila : News Feed(Beta version)";
+    ViewBag.Title = "ePaila : News Feed (Beta version)";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<script src="@Url.Content("~/Content/js/xdomain.js")"></script>
+<script>
+    setInterval(function () { autoloadpage(); }, 30000); // it will call the function autoload() after each 30 seconds.
+    function autoloadpage() {
+        $.ajax({
+            url: "@Url.Action("Index","Home")",
+            type: "POST",
+            success: function (data) {
+                $("div#feeds").html($(data).find("#feeds"));
+                $(".tips").tip_cards();
+            }
+        });
+    }
+</script>
 
-@foreach (var item in Model.Items)
-{
-    <article class="box post post-excerpt">
-        <header>
-            <h2><a href="@item.Link" target="_blank">@item.HeadLine</a></h2>
-        </header>
-        <span class="date">
-            <span><a href="@item.URL" target="_blank">@item.Title</a> -</span>
-            <span>@ePaila.Utility.eDateTime.ToRelativeTime(item.PublishedDate)</span>            
-        </span>
-        <p>@Html.Raw(item.Description)</p>
-        <hr>
-    </article>
-}
+<link href="@Url.Content("~/Content/css/news_cards.css")" rel="stylesheet" type="text/css" />
+
+<script src="@Url.Content("~/Content/js/jquery.news_cards.js")"></script>
+<script>
+    $(document).ready(function () {
+        $(document).ready(function () {
+            $(".tips").tip_cards();
+        });
+    });
+
+</script>
+<div id="feeds">
+    <div class="page-container">
+        <ul class="tips">
+            @foreach (var item in Model.Items.Take(25))
+            {
+                <li>
+                    <div class="tc_front">
+                        <a href="@item.Link" style="text-decoration:none" target="_blank">
+                            <h2>@item.HeadLine</h2>
+                            <span class="image caption">
+                                <span>@item.Title -</span>
+                                <span>@ePaila.Utility.eDateTime.ToRelativeTime(item.PublishedDate)</span>
+                            </span>
+                            <p>@Html.Raw(item.Description)</p>
+                        </a>
+                    </div>
+                    <div class="tc_back"></div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

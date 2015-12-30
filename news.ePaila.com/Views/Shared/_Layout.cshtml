@@ -14,7 +14,6 @@
     <script src="@Url.Content("~/Content/js/jquery.min.js")"></script>
     <script src="@Url.Content("~/Content/js/skel.min.js")"></script>
     <script src="@Url.Content("~/Content/js/util.js")"></script>
-    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="@Url.Content("~/Content/js/main.js")"></script>
 </head>
 <body>
@@ -31,16 +30,20 @@
 
             <!-- Logo -->
             <h1 id="logo"><a href="@Url.Action("Index", "Home")">ePaila</a></h1>
-            <label id="alert" style="font-size:small; margin-left: 2.5em">Updated 1 min ago</label>
+            <label id="alert" style="font-size:small;">Updated every 30 sec</label><br />
+            <label id="alert" style="font-size:small;">@Model.Items.Where(x => x.PublishedDate >= DateTime.Now.AddMinutes(-59)).Count() news last hour</label>
             <!-- Nav -->
-            <nav id="nav">
+            <section class="box recent-posts">
+                <header>
+                    <h2>News Channel</h2>
+                </header>
                 <ul>
                     @foreach (var item in Model.Channels)
                     {
                         <li><a href="@item.URL" target="_blank">@item.Title</a></li>
                     }
                 </ul>
-            </nav>
+            </section>
 
             <!-- Search -->
             <section class="box search">
@@ -48,42 +51,43 @@
                     <input type="text" class="text" name="search" placeholder="Search" />
                 </form>
             </section>
-
-            <!-- Text -->
-            <section class="box text-style1">
-                <div class="inner">
-                    <p>
-                        <a href="#">What I learn From Nature</a> |
-                        <a href="#">Blue Moon </a> |
-                        <a href="#">Educate Child</a> |
-                        <a href="#">App Architect </a>
-                    </p>
-                </div>
-            </section>
-
-            <!-- Recent Posts -->
+            
+            <!-- Top News -->
             <section class="box recent-posts">
                 <header>
-                    <h2>Top Viewed</h2>
+                    <h2>Top News</h2>
                 </header>
                 <ul>
-                @foreach (var item in Model.Items.Take(5))
-                {
-                    <li><a href="@item.Link" target="_blank">@(item.HeadLine.Length > 26 ? item.HeadLine.Substring(0, 26) : item.HeadLine)...</a></li>
-                }
+                    @foreach (var item in Model.Items.Take(5))
+                    {
+                        <li><a href="@item.Link" target="_blank">@(item.HeadLine.Length > 26 ? item.HeadLine.Substring(0, 26) : item.HeadLine)...</a></li>
+                    }
                 </ul>
             </section>
 
-            <!-- Recent Comments -->
+            <!-- Recent News -->
             <section class="box recent-comments">
                 <header>
-                    <h2>Top Comment</h2>
+                    <h2>Recent</h2>
                 </header>
                 <ul>
-                @foreach (var item in Model.Items.Take(5))
-                {
-                    <li><a href="@item.Link" target="_blank">@(item.HeadLine.Length > 26 ? item.HeadLine.Substring(0, 26) : item.HeadLine)...</a></li>
-                }
+                    @foreach (var item in Model.Items.Skip(25).Take(10))
+                    {
+                        <li><a href="@item.Link" target="_blank">@(item.HeadLine.Length > 26 ? item.HeadLine.Substring(0, 26) : item.HeadLine)...</a></li>
+                    }
+                </ul>
+            </section>
+
+            <!-- Past One Hour News-->
+            <section class="box recent-comments">
+                <header>
+                    <h2>One Hour Before</h2>
+                </header>
+                <ul>
+                    @foreach (var item in Model.Items.Where(x=> x.PublishedDate<= DateTime.Now.AddMinutes(-60)).Take(10))
+                    {
+                        <li><a href="@item.Link" target="_blank">@(item.HeadLine.Length > 26 ? item.HeadLine.Substring(0, 26) : item.HeadLine)...</a></li>
+                    }
                 </ul>
             </section>
 

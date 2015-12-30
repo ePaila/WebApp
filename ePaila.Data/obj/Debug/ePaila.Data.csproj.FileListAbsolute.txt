@@ -22,3 +22,5 @@ D:\EpailaTech.com\Repo\WebApp\ePaila.Data\bin\Debug\EntityFramework.SqlServer.xm
 D:\EpailaTech.com\Repo\WebApp\ePaila.Data\obj\Debug\ePaila.Data.csprojResolveAssemblyReference.cache
 D:\EpailaTech.com\Repo\WebApp\ePaila.Data\obj\Debug\ePaila.Data.dll
 D:\EpailaTech.com\Repo\WebApp\ePaila.Data\obj\Debug\ePaila.Data.pdb
+D:\EpailaTech.com\Repo\WebApp\ePaila.Data\bin\Debug\ePaila.Utility.dll
+D:\EpailaTech.com\Repo\WebApp\ePaila.Data\bin\Debug\ePaila.Utility.pdb
