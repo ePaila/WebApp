@@ -16,7 +16,7 @@ namespace news.ePaila.com.Controllers
             FeedMeViewModel model = new FeedMeViewModel();
 
             //add channel
-            #region Add Channel
+            #region Add Common Channel first for faster page load
             FeedChannel channel;
 
             channel = new SetoPati();
@@ -25,6 +25,16 @@ namespace news.ePaila.com.Controllers
             channel = new OnlineKhabar();
             model.Channels.Add(channel);
 
+            
+            #endregion
+            //load rss items
+            
+            foreach (var item in model.Channels)
+            {
+                model.Items.AddRange(item.ReadFeedItems());
+            }
+
+            #region Add Other Channel for later refresh
             channel = new RatoPati();
             model.Channels.Add(channel);
 
@@ -49,13 +59,21 @@ namespace news.ePaila.com.Controllers
             channel = new NagarikNews();
             model.Channels.Add(channel);
             #endregion
-            //load rss items
-            
-            foreach (var item in model.Channels)
-            {
-                model.Items.AddRange(item.ReadFeedItems());
-            }
+
+            Session["efeed"] = model.Channels;
             return View(model);
+        }
+                
+        public ActionResult RefreshFeed()
+        {
+            var m = new FeedMeViewModel();
+            m.Channels = (List<FeedChannel>)Session["efeed"];
+            foreach (var channel in m.Channels)
+            {
+                var feeds = channel.ReadFeedItems();
+                m.Items.AddRange(feeds);
+            }            
+            return View("Index", m);
         }
     }
 }

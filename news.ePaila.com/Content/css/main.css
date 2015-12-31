@@ -1566,7 +1566,7 @@ input, textarea, select {
 }
 
 a {
-    color: #c94663;
+    /*color: #c94663;*/
 }
 
 strong, b {
@@ -1619,7 +1619,7 @@ br.clear {
 }
 
 p, ul, ol, dl {
-    margin-bottom: 1em;
+    margin-bottom: -1em;
     font-size: 93%;
 }
 

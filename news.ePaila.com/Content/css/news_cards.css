@@ -166,6 +166,7 @@ body .tc_front {
 	z-index: 2;
 	-webkit-transform: rotateY(0deg);
 	-webkit-transform: translate3d(0, 0, 0);
+    margin: 1px;
 }
 
 body .tc_back {
