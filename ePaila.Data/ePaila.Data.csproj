@@ -75,7 +75,6 @@
     <Compile Include="Repo\IEditableRepository.cs" />
     <Compile Include="Repo\IRepository.cs" />
     <Compile Include="Repo\LeftPanelRepository.cs" />
-    <Compile Include="Repo\NewsFeedRadarRepository.cs" />
     <Compile Include="Repo\RepositoryBase.cs" />
     <Compile Include="Repo\ArticleRepository.cs" />
   </ItemGroup>

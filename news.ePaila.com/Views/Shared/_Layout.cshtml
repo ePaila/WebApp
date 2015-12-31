@@ -1,6 +1,4 @@
-﻿@using ePaila.ViewModel;
-
-@model ePaila.ViewModel.FeedMeViewModel
+﻿@model ePaila.Models.FeedMeViewModel
 <!DOCTYPE html>
 
 <html>
@@ -29,8 +27,7 @@
         <div id="sidebar">
 
             <!-- Logo -->
-            <h1 id="logo"><a href="@Url.Action("Index", "Home")">ePaila</a></h1>
-            <label id="alert" style="font-size:small;">Updated every 30 sec</label><br />
+            <h1 id="logo"><a href="@Url.Action("Index", "Home")">ePaila</a></h1>            
             <label id="alert" style="font-size:small;">@Model.Items.Where(x => x.PublishedDate >= DateTime.Now.AddMinutes(-59)).Count() news last hour</label>
             
             <!-- Search -->

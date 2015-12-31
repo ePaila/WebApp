@@ -6,4 +6,6 @@ D:\EpailaTech.com\Repo\WebApp\ePaila.Model\bin\Debug\ePaila.ViewModel.dll
 D:\EpailaTech.com\Repo\WebApp\ePaila.Model\bin\Debug\ePaila.ViewModel.pdb
 D:\EpailaTech.com\Repo\WebApp\ePaila.Model\obj\Debug\ePaila.ViewModel.dll
 D:\EpailaTech.com\Repo\WebApp\ePaila.Model\obj\Debug\ePaila.ViewModel.pdb
+D:\EpailaTech.com\Repo\WebApp\ePaila.Model\bin\Debug\ePaila.Utility.dll
+D:\EpailaTech.com\Repo\WebApp\ePaila.Model\bin\Debug\ePaila.Utility.pdb
 D:\EpailaTech.com\Repo\WebApp\ePaila.Model\obj\Debug\ePaila.ViewModel.csprojResolveAssemblyReference.cache

@@ -107,10 +107,7 @@
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\skel.min.js" />
     <Content Include="Content\js\util.js" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
@@ -122,12 +119,7 @@
     <Content Include="Content\sass\libs\_skel.scss" />
     <Content Include="Content\sass\libs\_vars.scss" />
     <Content Include="Content\sass\main.scss" />
-    <Content Include="fonts\fontawesome-webfont.woff2" />
     <None Include="Properties\PublishProfiles\news.ePaila.com.pubxml" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +128,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Channel\BBCNepali.cs" />
+    <Compile Include="Models\Channel\BizMandu.cs" />
+    <Compile Include="Models\Channel\HimalKhabar.cs" />
+    <Compile Include="Models\Channel\ImageKhabar.cs" />
+    <Compile Include="Models\Channel\NagarikNews.cs" />
+    <Compile Include="Models\Channel\OnlineKhabar.cs" />
+    <Compile Include="Models\Channel\PahiloPost.cs" />
+    <Compile Include="Models\Channel\RatoPati.cs" />
+    <Compile Include="Models\Channel\SetoPati.cs" />
+    <Compile Include="Models\Channel\UjyaloOnline.cs" />
+    <Compile Include="Models\FeedChannel.cs" />
+    <Compile Include="Models\FeedItem.cs" />
+    <Compile Include="Models\FeedMeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -144,10 +149,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -157,17 +158,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ePaila.Data\ePaila.Data.csproj">
-      <Project>{c3fbc922-3d84-4b1f-85d2-aac1f80c997c}</Project>
-      <Name>ePaila.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ePaila.Model\ePaila.ViewModel.csproj">
-      <Project>{dcd4b002-5c8e-490a-8e14-678257112142}</Project>
-      <Name>ePaila.ViewModel</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ePaila.Utility\ePaila.Utility.csproj">
       <Project>{ded8de25-aedc-4bc0-aaef-6d1e23f0e05a}</Project>
       <Name>ePaila.Utility</Name>

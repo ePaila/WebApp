@@ -1,10 +1,10 @@
-﻿using ePaila.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ePaila.Data.Repo;
+using ePaila.Models.Channel;
+using ePaila.Models;
 
 namespace news.ePaila.com.Controllers
 {
@@ -14,78 +14,46 @@ namespace news.ePaila.com.Controllers
         public ActionResult Index()
         {
             FeedMeViewModel model = new FeedMeViewModel();
+
             //add channel
             #region Add Channel
             FeedChannel channel;
-            channel = new FeedChannel()
-            {
-                Title = "Setopati",
-                URL = "http://www.setopati.com/",
-                FeedURL = "http://setopati.com/rss/"
-            };
+
+            channel = new SetoPati();
             model.Channels.Add(channel);
 
-            channel = new FeedChannel()
-            {
-                Title = "Onlinekhabar",
-                URL = "http://www.onlinekhabar.com/",
-                FeedURL = "http://www.onlinekhabar.com/feed/"
-            };
+            channel = new OnlineKhabar();
             model.Channels.Add(channel);
 
-            channel = new FeedChannel()
-            {
-                Title = "Ratopati",
-                URL = "http://ratopati.com/",
-                FeedURL = "http://www.ratopati.com/newsfeed/"
-            };
+            channel = new RatoPati();
             model.Channels.Add(channel);
 
-            channel = new FeedChannel()
-            {
-                Title = "Pahilopost",
-                URL = "http://pahilopost.com/",
-                FeedURL = "http://www.pahilopost.com/rss/"
-            };
+            channel = new PahiloPost();
             model.Channels.Add(channel);
 
-            channel = new FeedChannel()
-            {
-                Title = "Bizmandu",
-                URL = "http://bizmandu.com/",
-                FeedURL = "http://www.bizmandu.com/feed/news"
-            };
+            channel = new BizMandu();
             model.Channels.Add(channel);
 
-            channel = new FeedChannel()
-            {
-                Title = "Imagekhabar",
-                URL = "http://imagekhabar.com/",
-                FeedURL = "http://www.imagekhabar.com/feed/"
-            };
+            channel = new ImageKhabar();
             model.Channels.Add(channel);
 
-            channel = new FeedChannel()
-            {
-                Title = "Himalkhabar",
-                URL = "http://himalkhabar.com/",
-                FeedURL = "http://www.himalkhabar.com/feed"
-            };
+            channel = new HimalKhabar();
             model.Channels.Add(channel);
 
-            channel = new FeedChannel()
-            {
-                Title = "Ujyaaloonline",
-                URL = "http://ujyaaloonline.com/",
-                FeedURL = "http://ujyaaloonline.com/rss"
-            };
-            model.Channels.Add(channel);    
+            channel = new UjyaloOnline();
+            model.Channels.Add(channel);
+
+            channel = new BBCNepali();
+            model.Channels.Add(channel);
+
+            channel = new NagarikNews();
+            model.Channels.Add(channel);
             #endregion
             //load rss items
-            NewsFeedRadarRepository feedRepo = new NewsFeedRadarRepository();
+            
             foreach (var item in model.Channels)
             {
-                model.Items.AddRange(feedRepo.GetFeedItems(item));
+                model.Items.AddRange(item.ReadFeedItems());
             }
             return View(model);
         }

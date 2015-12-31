@@ -46,12 +46,28 @@
     <Compile Include="ArticleDetailViewModel.cs" />
     <Compile Include="ArticleViewModel.cs" />
     <Compile Include="Calendar.cs" />
+    <Compile Include="Channel\BBCNepali.cs" />
+    <Compile Include="Channel\BizMandu.cs" />
+    <Compile Include="Channel\HimalKhabar.cs" />
+    <Compile Include="Channel\ImageKhabar.cs" />
+    <Compile Include="Channel\NagarikNews.cs" />
+    <Compile Include="Channel\OnlineKhabar.cs" />
+    <Compile Include="Channel\PahiloPost.cs" />
+    <Compile Include="Channel\RatoPati.cs" />
+    <Compile Include="Channel\SetoPati.cs" />
+    <Compile Include="Channel\UjyaloOnline.cs" />
     <Compile Include="ContactMeViewModel.cs" />
     <Compile Include="FeedChannel.cs" />
     <Compile Include="FeedItem.cs" />
     <Compile Include="FeedMeViewModel.cs" />
     <Compile Include="LeftPanelViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ePaila.Utility\ePaila.Utility.csproj">
+      <Project>{ded8de25-aedc-4bc0-aaef-6d1e23f0e05a}</Project>
+      <Name>ePaila.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

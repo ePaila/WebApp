@@ -1,25 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace ePaila.ViewModel
+namespace ePaila.ViewModel.Channel
 {
-    public abstract class FeedChannel
+    public class RatoPati : FeedChannel
     {
-        public string Title { get; set; }
-        public string URL { get; set; }
-        public string FeedURL { get; set; }
-
-        protected string ReadNodeElement(XmlNode rssNode, string element)
+        public RatoPati()
         {
-            XmlNode rssSubNode = rssNode.SelectSingleNode(element);
-            return rssSubNode != null ? rssSubNode.InnerText : "";
+            Title = "Ratopati";
+            URL = "http://ratopati.com/";
+            FeedURL = "http://www.ratopati.com/newsfeed/";
         }
 
-        public virtual List<FeedItem> ReadFeedItems(int count = 20)
+        public override List<FeedItem> ReadFeedItems(int count = 20)             
         {
             List<ViewModel.FeedItem> items = new List<ViewModel.FeedItem>();
             XmlDocument rssXmlDoc = new XmlDocument();
@@ -27,12 +26,23 @@ namespace ePaila.ViewModel
             {
                 try
                 {
-                    rssXmlDoc.Load(this.FeedURL);
+                    WebClient wc = new WebClient();
+                    Stream st = wc.OpenRead(this.FeedURL);
+                    string rss = "";
+                    using (StreamReader sr = new StreamReader(st))
+                    {
+                        rss = sr.ReadToEnd();
+                    }
+                    int index = rss.IndexOf('<');
+                    rss = rss.Remove(0, index);
+                    rssXmlDoc.LoadXml(rss);
                 }
                 catch (Exception ex1)
                 {
+
                 }
                 // Parse the Items in the RSS file
+
                 XmlNodeList rssNodes = rssXmlDoc.SelectNodes("rss/channel/item");
 
                 // Iterate through the items in the RSS file
@@ -45,9 +55,11 @@ namespace ePaila.ViewModel
 
                     items.Add(new ViewModel.FeedItem() { Title = this.Title, URL = this.URL, HeadLine = title, Description = description, Link = link, PublishedDate = pubDate });
                 }
+
             }
             catch (Exception ex)
             {
+
             }
             return items.Take(count).ToList();
         }
