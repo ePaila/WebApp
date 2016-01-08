@@ -16,10 +16,10 @@
   
   var defaults = {
     entrance: "bottom",
-    column: 2,
+    column: 3,
     margin: "1%",
     selector: "> li",
-    hoverTilt: "right",
+    hoverTilt: "up",
     triggerSelector: "> li a",
     cardFlyDirection: "all",
     closeButton: "X",

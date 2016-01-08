@@ -120,16 +120,19 @@
     <Content Include="Content\sass\libs\_vars.scss" />
     <Content Include="Content\sass\main.scss" />
     <None Include="Properties\PublishProfiles\news.ePaila.com.pubxml" />
+    <Content Include="google99ce1bc9267aa49f.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Channel\BBCNepali.cs" />
     <Compile Include="Models\Channel\BizMandu.cs" />
+    <Compile Include="Models\Channel\GoogleNews.cs" />
     <Compile Include="Models\Channel\HimalKhabar.cs" />
     <Compile Include="Models\Channel\ImageKhabar.cs" />
     <Compile Include="Models\Channel\NagarikNews.cs" />
@@ -141,6 +144,8 @@
     <Compile Include="Models\FeedChannel.cs" />
     <Compile Include="Models\FeedItem.cs" />
     <Compile Include="Models\FeedMeViewModel.cs" />
+    <Compile Include="Models\SearchViewModel.cs" />
+    <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +154,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

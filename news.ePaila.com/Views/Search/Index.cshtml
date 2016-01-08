@@ -1,9 +1,9 @@
-﻿
-@model ePaila.Models.FeedMeViewModel
+﻿@model ePaila.Models.SearchViewModel
 @{
-    ViewBag.Title = "ePaila :: Upto Date Nepali News in Single Page";
+    ViewBag.Title = "Search:: "+ViewBag.Search;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -19,10 +19,11 @@
     setInterval(function () { autoloadpage(); }, 30000); // it will call the function autoload() after each 30 seconds.
     function autoloadpage() {
         $.ajax({
-            url: "@Url.Action("RefreshFeed", "Home")",
+            url: "@Url.Action("Index", "Search")",
+            data:{search:'@ViewBag.Search'},
             type: "POST",
-            success: function (data) {                
-                $("div#feeds").html($(data).find("#feeds"));                
+            success: function (data) {
+                $("div#feeds").html($(data).find("#feeds"));
                 $("div#sidebar").html($(data).find("#sidebar"));
                 $(".tips").tip_cards();
             }
@@ -35,9 +36,12 @@
 <script src="@Url.Content("~/Content/js/jquery.news_cards.js")"></script>
 <script>
     $(document).ready(function () {
-        $(".tips").tip_cards();
-        autoloadpage();
+        $(document).ready(function () {
+            $(".tips").tip_cards();
+            autoloadpage();
+        });
     });
+
 </script>
 <div id="feeds">
     <div class="page-container">
@@ -53,7 +57,7 @@
                                 <span>@item.Title -</span>
                                 <span>@ePaila.Utility.eDateTime.ToRelativeTime(item.PublishedDate)</span>
                             </span>
-                            @Html.Raw(item.Description.Length > 185 ? item.Description.Substring(0, 185) : item.Description)
+                            @*@Html.Raw(item.Description.Length > 185 ? item.Description.Substring(0, 185) : item.Description)*@
                         </a>
                     </div>
                     <div class="tc_back"></div>
@@ -62,3 +66,4 @@
         </ul>
     </div>
 </div>
+

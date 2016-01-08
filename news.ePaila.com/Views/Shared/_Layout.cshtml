@@ -1,4 +1,4 @@
-﻿@model ePaila.Models.FeedMeViewModel
+﻿@model ePaila.Models.ViewModel
 <!DOCTYPE html>
 
 <html>
@@ -27,16 +27,19 @@
         <div id="sidebar">
 
             <!-- Logo -->
-            <h1 id="logo"><a href="@Url.Action("Index", "Home")">ePaila</a></h1>            
+            <h1 id="logo"><a href="@Url.Action("Index", "Home")">ePaila</a></h1>
             <label id="alert" style="font-size:small;">@Model.Items.Where(x => x.PublishedDate >= DateTime.Now.AddMinutes(-59)).Count() news last hour</label>
-            
+
             <!-- Search -->
             <section class="box search">
-                <form method="post" action="#">
-                    <input type="text" class="text" name="search" placeholder="Search" />
-                </form>
+                @using (Html.BeginForm("Index", "Search"))
+                {
+                    <form method="post" action="#">
+                        <input type="text" class="text" name="search" placeholder="Search" />
+                    </form>
+                }
             </section>
-            
+
             <!-- Top News -->
             <section class="box recent-posts">
                 <header>
@@ -69,7 +72,7 @@
                     <h2>One Hour Before</h2>
                 </header>
                 <ul>
-                    @foreach (var item in Model.Items.Where(x=> x.PublishedDate<= DateTime.Now.AddMinutes(-60)).Take(10))
+                    @foreach (var item in Model.Items.Where(x => x.PublishedDate <= DateTime.Now.AddMinutes(-60)).Take(10))
                     {
                         <li><a href="@item.Link" target="_blank">@(item.HeadLine.Length > 26 ? item.HeadLine.Substring(0, 26) : item.HeadLine)...</a></li>
                     }

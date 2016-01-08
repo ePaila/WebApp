@@ -6,19 +6,49 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    
+
     <title>@ViewBag.Title</title>
-    <link rel="icon" type="image/png" href="@Url.Content("~/Content/images/Favicon.png")"/>
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/images/Favicon.png")" />
     <link href="@Url.Content("~/Content/css/main.css")" rel="stylesheet" type="text/css" />
+    
 
     <script src="@Url.Content("~/Content/js/jquery.min.js")"></script>
     <script src="@Url.Content("~/Content/js/skel.min.js")"></script>
     <script src="@Url.Content("~/Content/js/util.js")"></script>
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="@Url.Content("~/Content/js/main.js")"></script>
+
+    
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>    
+    <script type="text/javascript">
+        $(window).load(function () {
+           $(".goog-te-gadget-simple").attr('class', 'jpt');
+
+            //$('#:0.targetLanguage').removeClass('goog-te-gadget-simple');//.addClass('jpt');   
+            //$('.goog-te-gadget-simple').css({ "background-color": "red" });
+        });
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+        }
+    </script>
+    <style type="text/css">
+        jpt {
+             /*background-color: #fff;*/ 
+            /* border-left: 1px solid #d5d5d5; */
+            /* border-top: 1px solid #9b9b9b; */
+            /* border-bottom: 1px solid #e8e8e8; */
+            /* border-right: 1px solid #d5d5d5; */
+            /*font-size: 10pt;*/
+            display: inline-block;
+            padding-top: 1px;
+            padding-bottom: 2px;
+            cursor: pointer;
+            zoom: 1;
+        }
+    </style>
 </head>
 <body>
-    <div>
+    <section>
         <!-- Content -->
         <div id="content">
             <div class="inner">
@@ -29,11 +59,13 @@
         </div>
 
         <!-- Sidebar -->
-        <div id="sidebar">
-
+        <section id="sidebar">
             <!-- Logo -->
             <h1 id="logo"><a href="@Url.Action("Index", "Home")">ePaila</a></h1>
 
+            <section>
+                <div id="google_translate_element"></div>                
+            </section>
             <!-- Nav -->
             <nav id="nav">
                 <ul>
@@ -69,10 +101,10 @@
                 <header>
                     <h2>Recent Posts</h2>
                 </header>
-                <ul>                    
+                <ul>
                     @foreach (var item in Model.RecentPosts)
                     {
-                        <li><a href="@Url.Action("Details", "Home",new { articleid= item.ArticleID})">@(item.Title.Length>26? item.Title.Substring(0,26): item.Title)...</a></li>
+                        <li><a href="@Url.Action("Details", "Home",new { articleid= item.ArticleID})">@(item.Title.Length > 26 ? item.Title.Substring(0, 26) : item.Title)...</a></li>
                     }
                 </ul>
             </section>
@@ -102,7 +134,7 @@
                 <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
             </ul>
 
-        </div>
-    </div>
+        </section>
+    </section>
 </body>
 </html>
