@@ -8,3 +8,5 @@ D:\EpailaTech.com\Repo\WebApp\ePaila.Model\bin\Release\ePaila.ViewModel.pdb
 D:\EpailaTech.com\Repo\WebApp\ePaila.Model\obj\Release\ePaila.ViewModel.csprojResolveAssemblyReference.cache
 D:\EpailaTech.com\Repo\WebApp\ePaila.Model\obj\Release\ePaila.ViewModel.dll
 D:\EpailaTech.com\Repo\WebApp\ePaila.Model\obj\Release\ePaila.ViewModel.pdb
+D:\EpailaTech.com\Repo\WebApp\ePaila.Model\bin\Release\ePaila.Utility.dll
+D:\EpailaTech.com\Repo\WebApp\ePaila.Model\bin\Release\ePaila.Utility.pdb

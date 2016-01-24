@@ -37,6 +37,13 @@ namespace ePaila.com.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        public ActionResult Favorite(int id)
+        {
+            _articleRepo.Favorite(id,Utility.eIPAddress.GetIPAddress());
+            return Json( _articleRepo.Favorite(id), JsonRequestBehavior.AllowGet);
+        }   
+
         public ActionResult Details(int articleid)
         {
             ArticleDetailViewModel model = new ArticleDetailViewModel();

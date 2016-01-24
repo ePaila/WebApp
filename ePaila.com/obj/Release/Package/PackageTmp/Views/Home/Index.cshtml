@@ -6,18 +6,35 @@
     //ViewBag.Title = "ePaila : Home"; title is set from controller
 }
 
+<script type="text/javascript">
+    $(function () {
+        $('.fa-heart').click(function (e) {
+            e.preventDefault();
+            var thisLink = this;
+            $.ajax({
+                url: "@Url.Action("Favorite", "Home")",
+                data: { id: $(this).attr("article_id") },
+                type: "POST",
+                datatype:'json',
+                success: function (data) {
+                    $(thisLink).text(data);
+                }
+            });
+        });
+    });
+</script>
 <!-- Post -->
-@foreach (var item in Model.Articles.Where(x=> x.IsVisible))
+@foreach (var item in Model.Articles.Where(x => x.IsVisible))
 {
     <article class="box post post-excerpt">
         <header>
-            <h2><a href="@Url.Action("Details", "Home",new { articleid= item.ArticleID})" >@item.Title</a></h2>
+            <h2><a href="@Url.Action("Details", "Home",new { articleid= item.ArticleID})">@item.Title</a></h2>
         </header>
         <div class="info">
             <span class="date"><span class="month">@item.PostedDate.ToString("MMM")<span>y</span></span> <span class="day">@item.PostedDate.ToString("dd")</span><span class="year">, @item.PostedDate.ToString("yyyy")</span></span>
             <ul class="stats">
                 <li><a href="#" class="icon fa-comment">0</a></li>
-                <li><a href="#" class="icon fa-heart">0</a></li>
+                <li><a id="fav" name="fav" href="javascript:void(0)" class="icon fa-heart" article_id="@item.ArticleID">@item.Favorite</a></li>
                 <li><a href="#" class="icon fa-twitter">0</a></li>
                 <li><a href="#" class="icon fa-facebook">0</a></li>
             </ul>
@@ -27,16 +44,16 @@
 }
 <!-- Pagination -->
 @*<div class="pagination">
-    <a href="#" class="button previous">Previous Page</a>
-    <div class="pages">
-        <a href="#" class="active">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <span>&hellip;</span>
-        <a href="#">20</a>
-    </div>
-    <a href="#" class="button next">Next Page</a>
-</div>*@
+        <a href="#" class="button previous">Previous Page</a>
+        <div class="pages">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <span>&hellip;</span>
+            <a href="#">20</a>
+        </div>
+        <a href="#" class="button next">Next Page</a>
+    </div>*@
 
 

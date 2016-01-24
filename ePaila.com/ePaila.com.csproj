@@ -174,7 +174,6 @@
     <Compile Include="Controllers\ArchivesController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ContactMeController.cs" />
-    <Compile Include="Controllers\FeedMeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -207,7 +206,7 @@
     <None Include="Properties\PublishProfiles\ePailaProd.pubxml" />
     <None Include="Properties\PublishProfiles\LocalDeploy.pubxml" />
     <Content Include="Views\Archives\Index.cshtml" />
-    <Content Include="Views\FeedMe\Index.cshtml" />
+    <Content Include="Views\Home\_Comment.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -222,6 +221,7 @@
     <Folder Include="Areas\CMS\Models\" />
     <Folder Include="Areas\CMS\Views\Shared\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ePaila.Data\ePaila.Data.csproj">
@@ -231,6 +231,10 @@
     <ProjectReference Include="..\ePaila.Model\ePaila.ViewModel.csproj">
       <Project>{dcd4b002-5c8e-490a-8e14-678257112142}</Project>
       <Name>ePaila.ViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ePaila.Utility\ePaila.Utility.csproj">
+      <Project>{ded8de25-aedc-4bc0-aaef-6d1e23f0e05a}</Project>
+      <Name>ePaila.Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

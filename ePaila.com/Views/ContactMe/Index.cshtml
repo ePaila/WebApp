@@ -1,13 +1,21 @@
-﻿
+﻿@model ePaila.ViewModel.ContactMeViewModel
 @{
-    ViewBag.Title = "ePaila : ContactMe";
+    ViewBag.Title = "ePaila : Contact Me";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Get In Touch</h2>
-<p>
-    If you have any questions, please feel free to drope me a line. If you dont get an answer immediately, I might just be travelling through the middle of nowhere. I will get back to you as soon as I can. That's promise!
-</p>
-<label >Write to Human @@ epaila.tech@gmail.com</label>
+<h2>Use this box to send message.</h2>
+<form method="post">
+    @Html.AntiForgeryToken()
+    What's your mom call you?<br>
+    <input type="text" name="name" value="@Model.Name"><br>
+    Where can we email you back?<br>
+    <input type="text" name="email" value="@Model.Email"><br>
+    What's on your mind?<br>
+    <textarea name="message">@Model.Message</textarea>    
+    <br>
+    <input type="submit" value="Send">
+    <input type="reset" value="Clear">
+</form>
+<label>@ViewBag.Msg</label>
 
 

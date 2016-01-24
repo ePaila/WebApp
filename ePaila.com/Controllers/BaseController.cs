@@ -16,9 +16,12 @@ namespace ePaila.com.Controllers
         {
             base.OnActionExecuted(filterContext);
             var model = filterContext.Controller.ViewData.Model as LeftPanelViewModel;
-            List<int> articlesDays = getArticlesDaysOfMonth(DateTime.Now);
-            model.Calendar = loadCalendar(articlesDays);
-            model.RecentPosts = _leftPanelRepo.RecentPosts();
+            if (model != null)
+            {
+                List<int> articlesDays = getArticlesDaysOfMonth(DateTime.Now);
+                model.Calendar = loadCalendar(articlesDays);
+                model.RecentPosts = _leftPanelRepo.RecentPosts();
+            }
         }
 
         public BaseController()
@@ -75,11 +78,15 @@ namespace ePaila.com.Controllers
                     var prop = calendar.Week4.GetType().GetProperty(i.DayOfWeek.ToString());
                     prop.SetValue(calendar.Week4, _day, null);
                 }
-
-                else
+                else if(weekNo==5)
                 {
                     var prop = calendar.Week5.GetType().GetProperty(i.DayOfWeek.ToString());
                     prop.SetValue(calendar.Week5, _day, null);
+                }
+                else
+                {
+                    var prop = calendar.Week6.GetType().GetProperty(i.DayOfWeek.ToString());
+                    prop.SetValue(calendar.Week6, _day, null);
                 }
 
                 //increase week number

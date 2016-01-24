@@ -10,7 +10,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="Areas/CMS/Views/web.config">
-      <publishTime>10/13/2015 16:51:15</publishTime>
+      <publishTime>12/28/2015 22:49:09</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>10/13/2015 17:14:46</publishTime>
@@ -21,11 +21,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/EntityFramework.SqlServer.dll">
       <publishTime>10/14/2015 00:48:52</publishTime>
     </File>
+    <File Include="bin/ePaila.com.dll">
+      <publishTime>01/24/2016 00:54:59</publishTime>
+    </File>
     <File Include="bin/ePaila.Data.dll">
-      <publishTime>11/29/2015 17:30:06</publishTime>
+      <publishTime>01/24/2016 00:54:58</publishTime>
+    </File>
+    <File Include="bin/ePaila.Utility.dll">
+      <publishTime>01/24/2016 00:54:57</publishTime>
     </File>
     <File Include="bin/ePaila.ViewModel.dll">
-      <publishTime>11/24/2015 21:06:56</publishTime>
+      <publishTime>01/24/2016 00:54:57</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>10/13/2015 16:51:00</publishTime>
@@ -118,7 +124,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/13/2015 17:15:43</publishTime>
     </File>
     <File Include="Content/css/font-awesome.min.css">
-      <publishTime>10/13/2015 17:28:29</publishTime>
+      <publishTime>01/07/2016 19:23:22</publishTime>
     </File>
     <File Include="Content/css/ie8.css">
       <publishTime>10/13/2015 17:28:29</publishTime>
@@ -150,11 +156,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/fonts/FontAwesome.otf">
       <publishTime>10/13/2015 17:28:29</publishTime>
     </File>
+    <File Include="Content/images/Favicon.png">
+      <publishTime>12/19/2015 15:45:12</publishTime>
+    </File>
     <File Include="Content/images/gldngate.jpg">
       <publishTime>10/13/2015 22:51:08</publishTime>
     </File>
     <File Include="Content/images/goldengatebridge.jpg">
       <publishTime>10/13/2015 22:51:08</publishTime>
+    </File>
+    <File Include="Content/images/news.jpg">
+      <publishTime>12/29/2015 23:03:39</publishTime>
     </File>
     <File Include="Content/images/pic01.jpg">
       <publishTime>10/13/2015 22:51:08</publishTime>
@@ -204,38 +216,47 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/sass/main.scss">
       <publishTime>10/13/2015 17:28:29</publishTime>
     </File>
+    <File Include="Error.html">
+      <publishTime>12/29/2015 16:00:19</publishTime>
+    </File>
     <File Include="Global.asax">
-      <publishTime>10/13/2015 16:50:58</publishTime>
+      <publishTime>12/28/2015 23:07:35</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>10/15/2015 23:17:27</publishTime>
     </File>
     <File Include="Views/AboutMe/Index.cshtml">
-      <publishTime>11/29/2015 15:31:57</publishTime>
+      <publishTime>12/27/2015 19:54:26</publishTime>
+    </File>
+    <File Include="Views/Archives/Index.cshtml">
+      <publishTime>12/19/2015 15:33:05</publishTime>
     </File>
     <File Include="Views/ContactMe/Index.cshtml">
-      <publishTime>11/25/2015 13:06:32</publishTime>
+      <publishTime>01/23/2016 22:56:09</publishTime>
+    </File>
+    <File Include="Views/FeedMe/Index.cshtml">
+      <publishTime>12/28/2015 00:15:25</publishTime>
     </File>
     <File Include="Views/Home/Details.cshtml">
       <publishTime>11/05/2015 22:51:14</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>11/29/2015 17:18:44</publishTime>
+      <publishTime>01/24/2016 00:54:00</publishTime>
     </File>
     <File Include="Views/Shared/_Calendar.cshtml">
       <publishTime>10/18/2015 23:21:06</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>11/29/2015 17:07:06</publishTime>
+      <publishTime>01/23/2016 22:55:40</publishTime>
     </File>
     <File Include="Views/web.config">
-      <publishTime>10/15/2015 23:18:29</publishTime>
+      <publishTime>12/28/2015 22:49:18</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
       <publishTime>10/13/2015 16:54:59</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/29/2015 17:50:14</publishTime>
+      <publishTime>01/23/2016 21:33:55</publishTime>
     </File>
   </ItemGroup>
 </Project>

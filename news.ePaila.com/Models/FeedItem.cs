@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ePaila.ViewModel
+namespace ePaila.Models
 {
     public class FeedItem : FeedChannel
     {

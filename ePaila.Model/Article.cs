@@ -13,5 +13,7 @@ namespace ePaila.ViewModel
         public string Body { get; set; }
         public DateTime PostedDate { get; set; }
         public bool IsVisible { get; set; }
-    }    
+        public int Favorite { get; set; }
+        List<Comment> Comments { get; set; } = new List<Comment>();
+    }
 }

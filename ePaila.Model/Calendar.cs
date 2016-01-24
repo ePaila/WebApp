@@ -14,6 +14,7 @@ namespace ePaila.ViewModel
         public TWeek Week3 { get; set; } = new TWeek();
         public TWeek Week4 { get; set; } = new TWeek();
         public TWeek Week5 { get; set; } = new TWeek();
+        public TWeek Week6 { get; set; } = new TWeek();
     }
 
     public class TWeek

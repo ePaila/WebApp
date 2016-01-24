@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="ePailaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ePailaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Articles" EntityType="ePailaModel.Article" />
+    <EntitySet Name="ContactUs" EntityType="ePailaModel.ContactU" />
+    <EntitySet Name="Favorites" EntityType="ePailaModel.Favorite" />
+    <AssociationSet Name="FK_Favorite_Articles" Association="ePailaModel.FK_Favorite_Articles">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="Favorite" EntitySet="Favorites" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="Article">
     <Key>
       <PropertyRef Name="ID" />
@@ -10,8 +19,38 @@
     <Property Name="PostedDate" Type="DateTime" Precision="3" />
     <Property Name="IsVisible" Type="Boolean" Nullable="false" />
     <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Favorites" Relationship="ePailaModel.FK_Favorite_Articles" FromRole="Article" ToRole="Favorite" />
   </EntityType>
-  <EntityContainer Name="ePailaEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Articles" EntityType="Self.Article" />
-  </EntityContainer>
+  <EntityType Name="ContactU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="From" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Favorite">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Article_ID" Type="Int32" />
+    <Property Name="DateTime" Type="DateTime" Precision="3" />
+    <Property Name="UserIP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Article" Relationship="ePailaModel.FK_Favorite_Articles" FromRole="Favorite" ToRole="Article" />
+  </EntityType>
+  <Association Name="FK_Favorite_Articles">
+    <End Type="ePailaModel.Article" Role="Article" Multiplicity="0..1" />
+    <End Type="ePailaModel.Favorite" Role="Favorite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Favorite">
+        <PropertyRef Name="Article_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

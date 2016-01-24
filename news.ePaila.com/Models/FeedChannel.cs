@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace ePaila.ViewModel
+namespace ePaila.Models
 {
     public abstract class FeedChannel
     {
@@ -21,7 +21,7 @@ namespace ePaila.ViewModel
 
         public virtual List<FeedItem> ReadFeedItems(int count = 20)
         {
-            List<ViewModel.FeedItem> items = new List<ViewModel.FeedItem>();
+            List<FeedItem> items = new List<FeedItem>();
             XmlDocument rssXmlDoc = new XmlDocument();
             try
             {
@@ -43,7 +43,7 @@ namespace ePaila.ViewModel
                     string description = ReadNodeElement(rssNode, "description");
                     DateTime pubDate = Utility.eDateTime.ToDateTime(ReadNodeElement(rssNode, "pubDate"));
 
-                    items.Add(new ViewModel.FeedItem() { Title = this.Title, URL = this.URL, HeadLine = title, Description = description, Link = link, PublishedDate = pubDate });
+                    items.Add(new FeedItem() { Title = this.Title, URL = this.URL, HeadLine = title, Description = description, Link = link, PublishedDate = pubDate });
                 }
             }
             catch (Exception ex)

@@ -46,20 +46,9 @@
     <Compile Include="ArticleDetailViewModel.cs" />
     <Compile Include="ArticleViewModel.cs" />
     <Compile Include="Calendar.cs" />
-    <Compile Include="Channel\BBCNepali.cs" />
-    <Compile Include="Channel\BizMandu.cs" />
-    <Compile Include="Channel\HimalKhabar.cs" />
-    <Compile Include="Channel\ImageKhabar.cs" />
-    <Compile Include="Channel\NagarikNews.cs" />
-    <Compile Include="Channel\OnlineKhabar.cs" />
-    <Compile Include="Channel\PahiloPost.cs" />
-    <Compile Include="Channel\RatoPati.cs" />
-    <Compile Include="Channel\SetoPati.cs" />
-    <Compile Include="Channel\UjyaloOnline.cs" />
+    <Compile Include="Comment.cs" />
     <Compile Include="ContactMeViewModel.cs" />
-    <Compile Include="FeedChannel.cs" />
-    <Compile Include="FeedItem.cs" />
-    <Compile Include="FeedMeViewModel.cs" />
+    <Compile Include="Favorite.cs" />
     <Compile Include="LeftPanelViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

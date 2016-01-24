@@ -36,8 +36,9 @@ namespace ePaila.Data.Repo
                      Title = y.Title,
                      Body = y.Body,
                      PostedDate = y.PostedDate.Value,
-                     IsVisible = y.IsVisible
-                 })                 
+                     IsVisible = y.IsVisible,
+                     Favorite = y.Favorites.Count
+                 })
              .ToList<ViewModel.Article>();
             }
             catch (Exception ex)
@@ -59,19 +60,20 @@ namespace ePaila.Data.Repo
             try
             {
                 results = _db.Articles
-                 .Where(x => !x.IsDeleted )
+                 .Where(x => !x.IsDeleted)
                  .Select(y => new ViewModel.Article()
                  {
                      ArticleID = y.ID,
                      Title = y.Title,
                      Body = y.Body,
                      PostedDate = y.PostedDate.Value,
-                     IsVisible = y.IsVisible
+                     IsVisible = y.IsVisible,
+                     Favorite = y.Favorites.Count
                  })
                  .OrderByDescending(z => z.PostedDate)
                  .Take(5)
-             .ToList<ViewModel.Article>();               
-                
+             .ToList<ViewModel.Article>();
+
             }
             catch (Exception ex)
             {
@@ -97,7 +99,8 @@ namespace ePaila.Data.Repo
                     Title = y.Title,
                     Body = y.Body,
                     PostedDate = y.PostedDate.Value,
-                    IsVisible = y.IsVisible
+                    IsVisible = y.IsVisible,
+                    Favorite = y.Favorites.Count
                 }
             ).FirstOrDefault();
         }
@@ -123,7 +126,8 @@ namespace ePaila.Data.Repo
                      Title = y.Title,
                      Body = y.Body,
                      PostedDate = y.PostedDate.Value,
-                     IsVisible = y.IsVisible
+                     IsVisible = y.IsVisible,
+                     Favorite = y.Favorites.Count
                  })
              .ToList<ViewModel.Article>();
             }
@@ -134,6 +138,39 @@ namespace ePaila.Data.Repo
             }
 
             return results;
+        }
+
+        public bool Favorite(int article_id, string info)
+        {
+            Favorite obj = new Data.Favorite() { DateTime = DateTime.Now, Article_ID = article_id, UserIP = info };
+            try
+            {
+                if (!_db.Favorites.Any(x => x.Article_ID == article_id & x.UserIP == info))
+                    _db.Favorites.Add(obj);
+               
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            return _db.SaveChanges() > 0;
+        }
+
+        public int Favorite(int article_id)
+        {
+            int count = 0;
+            try
+            {
+                count = _db.Favorites.Where(x => x.Article_ID == article_id).Count();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+            return count;
         }
     }
 }

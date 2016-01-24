@@ -56,6 +56,12 @@
       <DependentUpon>ePaila.tt</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="Comment.cs">
+      <DependentUpon>ePaila.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContactU.cs">
+      <DependentUpon>ePaila.tt</DependentUpon>
+    </Compile>
     <Compile Include="ePaila.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -71,7 +77,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ePaila.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Favorite.cs">
+      <DependentUpon>ePaila.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repo\ContactUsRepository.cs" />
     <Compile Include="Repo\IEditableRepository.cs" />
     <Compile Include="Repo\IRepository.cs" />
     <Compile Include="Repo\LeftPanelRepository.cs" />

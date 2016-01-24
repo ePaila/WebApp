@@ -26,5 +26,8 @@ namespace ePaila.Data
         }
     
         public virtual DbSet<Article> Articles { get; set; }
+        public virtual DbSet<ContactU> ContactUs { get; set; }
+        public virtual DbSet<Favorite> Favorites { get; set; }
+        public virtual DbSet<Comment> Comments { get; set; }
     }
 }

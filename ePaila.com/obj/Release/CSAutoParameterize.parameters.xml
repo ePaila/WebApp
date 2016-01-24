@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="ePailaEntities-Web.config Connection String" description="ePailaEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/ePaila.csdl|res://*/ePaila.ssdl|res://*/ePaila.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=SQL5017.Smarterasp.net;initial catalog=DB_9E3EC8_epaila;user id=DB_9E3EC8_epaila_admin;password=epailauser;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="D:\\EpailaTech\.com\\Repo\\WebApp\\ePaila\.com\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ePailaEntities']/@connectionString" />
-  </parameter>
-</parameters>

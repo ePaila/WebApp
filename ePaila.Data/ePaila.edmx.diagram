@@ -5,7 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="b3ba6c03b6bb4c509b45f22b73a86ffc" Name="Diagram1">
-        <EntityTypeShape EntityType="ePailaModel.Article" Width="1.5" PointX="1.375" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePailaModel.Article" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ePailaModel.ContactU" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ePailaModel.Favorite" Width="1.5" PointX="3" PointY="4" />
+        <AssociationConnector Association="ePailaModel.FK_Favorite_Articles" />
+        <EntityTypeShape EntityType="ePailaModel.Comment" Width="1.5" PointX="3" PointY="7" />
+        <AssociationConnector Association="ePailaModel.FK_Comments_Articles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
