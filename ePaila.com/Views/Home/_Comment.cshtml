@@ -1,1 +1,63 @@
 ﻿
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script>
+    $(function () {
+        var dialog, form;
+        var commentT, id;
+
+        function postComment() {           
+            var commentedby = $("#name").val();
+            var comment = $("#comment").val();
+            $.ajax({
+                url: "@Url.Action("Comment", "Home")",
+                data: { articleid: id, name: commentedby, comment: comment },
+                type: "POST",
+                datatype: 'json',
+                success: function (data) {
+                    $(commentT).text(data);
+                }
+            });
+            dialog.dialog("close");
+            return true;
+        }
+
+        dialog = $("#dialog-form").dialog({
+            autoOpen: false,
+            modal: true,
+            buttons: {
+                "Post": postComment,
+                Cancel: function () {
+                    dialog.dialog("close");
+                }
+            },
+            close: function () {
+                $("#name").val('');
+                $("#comment").val('');
+            }
+        });
+
+
+        $(".fa-comment").on("click", function (e) {
+            commentT = this;
+            id = $(this).attr("article_id");
+            dialog.dialog("open");
+        });
+    });
+</script>
+
+
+<div id="dialog-form" title="Post your thought">
+    <form>
+        <label id="articleid" hidden="hidden">00</label>
+        <fieldset>
+            <label>Your Name</label>
+            <input id="name" required /> <br />
+            <label>What's on your mind about this article?</label><br />
+            <textarea id="comment" required></textarea>
+        </fieldset>
+    </form>
+</div>
+

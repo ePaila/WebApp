@@ -19,6 +19,7 @@ namespace ePaila.Data
         public string CommentBy { get; set; }
         public string Text { get; set; }
         public Nullable<System.DateTime> CommentOn { get; set; }
+        public bool IsVisible { get; set; }
     
         public virtual Article Article { get; set; }
     }

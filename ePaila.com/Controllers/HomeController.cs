@@ -38,11 +38,18 @@ namespace ePaila.com.Controllers
         }
 
         [HttpPost]
-        public ActionResult Favorite(int id)
+        public ActionResult Favorite(int articleid)
         {
-            _articleRepo.Favorite(id,Utility.eIPAddress.GetIPAddress());
-            return Json( _articleRepo.Favorite(id), JsonRequestBehavior.AllowGet);
-        }   
+            _articleRepo.Favorite(articleid, Utility.eIPAddress.GetIPAddress());
+            return Json(_articleRepo.Favorite(articleid), JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult Comment(int articleid, string name, string comment)
+        {
+            _articleRepo.AddComment(articleid, name, comment);
+            return Json(_articleRepo.GetComments(articleid).Count, JsonRequestBehavior.AllowGet);
+        }
 
         public ActionResult Details(int articleid)
         {

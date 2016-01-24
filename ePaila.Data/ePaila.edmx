@@ -25,6 +25,7 @@
           <Property Name="CommentBy" Type="nvarchar" MaxLength="50" />
           <Property Name="Text" Type="nvarchar(max)" />
           <Property Name="CommentOn" Type="datetime" />
+          <Property Name="IsVisible" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="ContactUs">
           <Key>
@@ -156,6 +157,7 @@
           <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CommentOn" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Article" Relationship="ePailaModel.FK_Comments_Articles" FromRole="Comment" ToRole="Article" />
+          <Property Name="IsVisible" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="FK_Comments_Articles">
           <End Type="ePailaModel.Article" Role="Article" Multiplicity="0..1" />
@@ -211,6 +213,7 @@
           <EntitySetMapping Name="Comments">
             <EntityTypeMapping TypeName="ePailaModel.Comment">
               <MappingFragment StoreEntitySet="Comments">
+                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
                 <ScalarProperty Name="CommentOn" ColumnName="CommentOn" />
                 <ScalarProperty Name="Text" ColumnName="Text" />
                 <ScalarProperty Name="CommentBy" ColumnName="CommentBy" />

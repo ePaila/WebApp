@@ -14,7 +14,7 @@
                 url: "@Url.Action("Favorite", "Home")",
                 data: { id: $(this).attr("article_id") },
                 type: "POST",
-                datatype:'json',
+                datatype: 'json',
                 success: function (data) {
                     $(thisLink).text(data);
                 }
@@ -47,7 +47,7 @@
             Note: You can change the number of list items in "stats" to whatever you want.
         -->
         <ul class="stats">
-            <li><a href="javascript:void(0)" class="icon fa-comment" title="Comment">0</a></li>
+            <li><a href="javascript:void(0)" class="icon fa-comment" title="Comment" article_id="@Model.Article.ArticleID">@Model.Article.Comments.Count</a></li>
             <li><a href="javascript:void(0)" class="icon fa-heart" article_id="@Model.Article.ArticleID" title="Favorite">@Model.Article.Favorite</a></li>
             <li><a href="javascript:void(0)" class="icon fa-twitter" title="Share on Twitter">0</a></li>
             <li><a href="javascript:void(0)" class="icon fa-facebook" title="Share on Facebook">0</a></li>
@@ -55,4 +55,22 @@
     </div>
     @Html.Raw(Model.Article.Body)
 </article>
+@{Html.RenderPartial("_Comment");}
 
+<hr />
+<h2>Recent Comments</h2>
+<section class="box recent-comments">
+    @foreach (var item in Model.Article.Comments)
+    {
+        <fieldset class="inner">
+            @if (item.IsVisible)
+            {
+                <p><label>@ePaila.Utility.eDateTime.ToRelativeTime(item.CommentOn), by <strong>@item.CommenBy</strong></label> | @item.Text</p>
+            }
+            else
+            {
+                <p> @ePaila.Utility.eDateTime.ToRelativeTime(item.CommentOn), [waiting for approval to display the content]</p>
+            }
+    </fieldset>
+    }
+</section>

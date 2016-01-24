@@ -37,7 +37,9 @@ namespace ePaila.Data.Repo
                      Body = y.Body,
                      PostedDate = y.PostedDate.Value,
                      IsVisible = y.IsVisible,
-                     Favorite = y.Favorites.Count
+                     Favorite = y.Favorites.Count,
+                     Comments = y.Comments.Select(c => new ePaila.ViewModel.Comment() { ID = c.ID, ArticleID = c.ArticleID.Value, CommenBy = c.CommentBy, CommentOn = c.CommentOn.Value, Text = c.Text, IsVisible=c.IsVisible })
+                     .OrderByDescending(o => o.CommentOn).ToList()
                  })
              .ToList<ViewModel.Article>();
             }
@@ -68,7 +70,9 @@ namespace ePaila.Data.Repo
                      Body = y.Body,
                      PostedDate = y.PostedDate.Value,
                      IsVisible = y.IsVisible,
-                     Favorite = y.Favorites.Count
+                     Favorite = y.Favorites.Count,
+                     Comments = y.Comments.Select(c => new ePaila.ViewModel.Comment() { ID = c.ID, ArticleID = c.ArticleID.Value, CommenBy = c.CommentBy, CommentOn = c.CommentOn.Value, Text = c.Text, IsVisible=c.IsVisible })
+                     .OrderByDescending(o=> o.CommentOn).ToList()
                  })
                  .OrderByDescending(z => z.PostedDate)
                  .Take(5)
@@ -100,7 +104,9 @@ namespace ePaila.Data.Repo
                     Body = y.Body,
                     PostedDate = y.PostedDate.Value,
                     IsVisible = y.IsVisible,
-                    Favorite = y.Favorites.Count
+                    Favorite = y.Favorites.Count,
+                    Comments = y.Comments.Select(c => new ePaila.ViewModel.Comment() { ID = c.ID, ArticleID = c.ArticleID.Value, CommenBy = c.CommentBy, CommentOn = c.CommentOn.Value, Text = c.Text, IsVisible=c.IsVisible })
+                    .OrderByDescending(o => o.CommentOn).ToList()
                 }
             ).FirstOrDefault();
         }
@@ -126,8 +132,10 @@ namespace ePaila.Data.Repo
                      Title = y.Title,
                      Body = y.Body,
                      PostedDate = y.PostedDate.Value,
-                     IsVisible = y.IsVisible,
-                     Favorite = y.Favorites.Count
+                     IsVisible = y.IsVisible
+                     //Favorite = y.Favorites.Count,
+                     //Comments = y.Comments.Select(c => new ePaila.ViewModel.Comment() { ID = c.ID, ArticleID = c.ArticleID.Value, CommenBy = c.CommentBy, CommentOn = c.CommentOn.Value, Text = c.Text })
+                     //.OrderByDescending(o => o.CommentOn).ToList()
                  })
              .ToList<ViewModel.Article>();
             }
@@ -140,6 +148,13 @@ namespace ePaila.Data.Repo
             return results;
         }
 
+        /// <summary>
+        /// Favorite the article,
+        /// One count per user
+        /// </summary>
+        /// <param name="article_id"></param>
+        /// <param name="info"></param>
+        /// <returns></returns>
         public bool Favorite(int article_id, string info)
         {
             Favorite obj = new Data.Favorite() { DateTime = DateTime.Now, Article_ID = article_id, UserIP = info };
@@ -147,7 +162,7 @@ namespace ePaila.Data.Repo
             {
                 if (!_db.Favorites.Any(x => x.Article_ID == article_id & x.UserIP == info))
                     _db.Favorites.Add(obj);
-               
+
             }
             catch (Exception ex)
             {
@@ -157,6 +172,11 @@ namespace ePaila.Data.Repo
             return _db.SaveChanges() > 0;
         }
 
+        /// <summary>
+        /// Get Favorite Count for Article
+        /// </summary>
+        /// <param name="article_id"></param>
+        /// <returns></returns>
         public int Favorite(int article_id)
         {
             int count = 0;
@@ -171,6 +191,54 @@ namespace ePaila.Data.Repo
             }
 
             return count;
+        }
+
+
+        /// <summary>
+        /// Add comment on article
+        /// </summary>
+        /// <param name="article_id"></param>
+        /// <param name="commentBy"></param>
+        /// <param name="text"></param>
+        public void AddComment(int article_id, string commentBy, string text)
+        {
+            try
+            {
+                Comment obj = new Comment() { ArticleID = article_id, CommentBy = commentBy, Text = text, CommentOn = DateTime.Now };
+                _db.Comments.Add(obj);
+                _db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+
+                throw;
+            }
+        }
+
+        public List<ViewModel.Comment> GetComments(int article_id)
+        {
+            List<ViewModel.Comment> comments = new List<ViewModel.Comment>();
+            try
+            {
+                comments = _db.Comments.Where(x => x.ArticleID == article_id)
+                    .Select(y => new ViewModel.Comment()
+                    {
+                        ID = y.ID,
+                        ArticleID = y.ArticleID.Value,
+                        Text = y.Text,
+                        CommenBy = y.CommentBy,
+                        CommentOn = y.CommentOn.Value
+                    })
+                    .ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return comments;
         }
     }
 }

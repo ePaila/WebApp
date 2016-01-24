@@ -13,5 +13,6 @@ namespace ePaila.ViewModel
         public string CommenBy { get; set; }
         public string Text { get; set; }
         public DateTime CommentOn { get; set; }
+        public bool IsVisible { get; set; }
     }
 }
