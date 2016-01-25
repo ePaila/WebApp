@@ -11,6 +11,17 @@
     <Property Name="IsVisible" Type="bit" Nullable="false" />
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
   </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ArticleID" Type="int" />
+    <Property Name="CommentBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Text" Type="nvarchar(max)" />
+    <Property Name="CommentOn" Type="datetime" />
+    <Property Name="IsVisible" Type="bit" Nullable="false" />
+  </EntityType>
   <EntityType Name="ContactUs">
     <Key>
       <PropertyRef Name="ID" />
@@ -30,6 +41,18 @@
     <Property Name="DateTime" Type="datetime" />
     <Property Name="UserIP" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <Association Name="FK_Comments_Articles">
+    <End Role="Articles" Type="Self.Articles" Multiplicity="0..1" />
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="ArticleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Favorite_Articles">
     <End Role="Articles" Type="Self.Articles" Multiplicity="0..1" />
     <End Role="Favorite" Type="Self.Favorite" Multiplicity="*" />
@@ -44,8 +67,13 @@
   </Association>
   <EntityContainer Name="ePailaModelStoreContainer">
     <EntitySet Name="Articles" EntityType="Self.Articles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comments" EntityType="Self.Comments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ContactUs" EntityType="Self.ContactUs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Favorite" EntityType="Self.Favorite" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Comments_Articles" Association="Self.FK_Comments_Articles">
+      <End Role="Articles" EntitySet="Articles" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
     <AssociationSet Name="FK_Favorite_Articles" Association="Self.FK_Favorite_Articles">
       <End Role="Articles" EntitySet="Articles" />
       <End Role="Favorite" EntitySet="Favorite" />

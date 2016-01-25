@@ -8,6 +8,11 @@
       <End Role="Article" EntitySet="Articles" />
       <End Role="Favorite" EntitySet="Favorites" />
     </AssociationSet>
+    <EntitySet Name="Comments" EntityType="ePailaModel.Comment" />
+    <AssociationSet Name="FK_Comments_Articles" Association="ePailaModel.FK_Comments_Articles">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Article">
     <Key>
@@ -20,6 +25,7 @@
     <Property Name="IsVisible" Type="Boolean" Nullable="false" />
     <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Favorites" Relationship="ePailaModel.FK_Favorite_Articles" FromRole="Article" ToRole="Favorite" />
+    <NavigationProperty Name="Comments" Relationship="ePailaModel.FK_Comments_Articles" FromRole="Article" ToRole="Comment" />
   </EntityType>
   <EntityType Name="ContactU">
     <Key>
@@ -50,6 +56,30 @@
       </Principal>
       <Dependent Role="Favorite">
         <PropertyRef Name="Article_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ArticleID" Type="Int32" />
+    <Property Name="CommentBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CommentOn" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Article" Relationship="ePailaModel.FK_Comments_Articles" FromRole="Comment" ToRole="Article" />
+    <Property Name="IsVisible" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Comments_Articles">
+    <End Type="ePailaModel.Article" Role="Article" Multiplicity="0..1" />
+    <End Type="ePailaModel.Comment" Role="Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="ArticleID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

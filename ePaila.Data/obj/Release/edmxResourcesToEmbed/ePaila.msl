@@ -34,5 +34,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="ePailaModel.Comment">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="CommentOn" ColumnName="CommentOn" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="CommentBy" ColumnName="CommentBy" />
+          <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -22,16 +22,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/14/2015 00:48:52</publishTime>
     </File>
     <File Include="bin/ePaila.com.dll">
-      <publishTime>01/24/2016 00:54:59</publishTime>
+      <publishTime>01/24/2016 16:05:06</publishTime>
     </File>
     <File Include="bin/ePaila.Data.dll">
-      <publishTime>01/24/2016 00:54:58</publishTime>
+      <publishTime>01/24/2016 15:52:37</publishTime>
     </File>
     <File Include="bin/ePaila.Utility.dll">
       <publishTime>01/24/2016 00:54:57</publishTime>
     </File>
     <File Include="bin/ePaila.ViewModel.dll">
-      <publishTime>01/24/2016 00:54:57</publishTime>
+      <publishTime>01/24/2016 15:52:36</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>10/13/2015 16:51:00</publishTime>
@@ -135,6 +135,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/css/images/bg02.png">
       <publishTime>10/13/2015 17:28:29</publishTime>
     </File>
+    <File Include="Content/css/jquery_popup.css">
+      <publishTime>01/24/2016 13:02:04</publishTime>
+    </File>
     <File Include="Content/css/main.css">
       <publishTime>10/13/2015 17:28:29</publishTime>
     </File>
@@ -189,6 +192,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/js/jquery.min.js">
       <publishTime>10/13/2015 17:28:30</publishTime>
     </File>
+    <File Include="Content/js/jquery_popup.js">
+      <publishTime>01/24/2016 13:01:54</publishTime>
+    </File>
     <File Include="Content/js/main.js">
       <publishTime>10/13/2015 17:28:30</publishTime>
     </File>
@@ -238,13 +244,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/28/2015 00:15:25</publishTime>
     </File>
     <File Include="Views/Home/Details.cshtml">
-      <publishTime>11/05/2015 22:51:14</publishTime>
+      <publishTime>01/24/2016 16:04:02</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>01/24/2016 00:54:00</publishTime>
+      <publishTime>01/24/2016 16:04:10</publishTime>
+    </File>
+    <File Include="Views/Home/_Comment.cshtml">
+      <publishTime>01/24/2016 15:13:38</publishTime>
     </File>
     <File Include="Views/Shared/_Calendar.cshtml">
-      <publishTime>10/18/2015 23:21:06</publishTime>
+      <publishTime>01/24/2016 10:35:39</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>01/23/2016 22:55:40</publishTime>

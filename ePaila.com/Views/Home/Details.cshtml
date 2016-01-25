@@ -12,7 +12,7 @@
             var thisLink = this;
             $.ajax({
                 url: "@Url.Action("Favorite", "Home")",
-                data: { id: $(this).attr("article_id") },
+                data: { articleid: $(this).attr("article_id") },
                 type: "POST",
                 datatype: 'json',
                 success: function (data) {

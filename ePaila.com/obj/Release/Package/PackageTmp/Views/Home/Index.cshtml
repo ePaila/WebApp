@@ -13,9 +13,9 @@
             var thisLink = this;
             $.ajax({
                 url: "@Url.Action("Favorite", "Home")",
-                data: { id: $(this).attr("article_id") },
+                data: { articleid: $(this).attr("article_id") },
                 type: "POST",
-                datatype:'json',
+                datatype: 'json',
                 success: function (data) {
                     $(thisLink).text(data);
                 }
@@ -28,20 +28,27 @@
 {
     <article class="box post post-excerpt">
         <header>
-            <h2><a href="@Url.Action("Details", "Home",new { articleid= item.ArticleID})">@item.Title</a></h2>
+            <h2><a href="@Url.Action("Details", "Home", new { articleid = item.ArticleID })">@item.Title</a></h2>
         </header>
+        <div>
+           
+        </div>        
         <div class="info">
             <span class="date"><span class="month">@item.PostedDate.ToString("MMM")<span>y</span></span> <span class="day">@item.PostedDate.ToString("dd")</span><span class="year">, @item.PostedDate.ToString("yyyy")</span></span>
             <ul class="stats">
-                <li><a href="#" class="icon fa-comment">0</a></li>
-                <li><a id="fav" name="fav" href="javascript:void(0)" class="icon fa-heart" article_id="@item.ArticleID">@item.Favorite</a></li>
-                <li><a href="#" class="icon fa-twitter">0</a></li>
-                <li><a href="#" class="icon fa-facebook">0</a></li>
+                <li><a id="cmt" href="javascript:void(0)" class="icon fa-comment" article_id="@item.ArticleID" title="Comment">@item.Comments.Count</a></li>
+                <li><a href="javascript:void(0)" class="icon fa-heart" article_id="@item.ArticleID" title="Favorite">@item.Favorite</a></li>
+                <li><a href="javascript:void(0)" class="icon fa-twitter" title="Share on Twitter">0</a></li>
+                <li><a href="javascript:void(0)" class="icon fa-facebook" title="Share on Facebook">0</a></li>
             </ul>
         </div>
         @Html.Raw(item.Body)
     </article>
 }
+ @{Html.RenderPartial("_Comment");}
+            
+
+
 <!-- Pagination -->
 @*<div class="pagination">
         <a href="#" class="button previous">Previous Page</a>
